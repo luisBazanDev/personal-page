@@ -8,8 +8,13 @@
   font-family: 'Inconsolata', monospace;
 }
 
+.nav-bar {
+  position: fixed;
+  width: 100%;
+  height: 5rem;
+}
+
 .nav-bar ul {
-  width: 100vw;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   row-gap: 100%;
@@ -26,7 +31,7 @@
 .nav-bar .item::after {
   content: '';
   position: absolute;
-  margin-top: 4%;
+  margin-top: 5%;
   width: 5%;
   height: 0.1%;
   transform: translateX(-55%);
@@ -44,4 +49,25 @@
 .nav-bar .item.active {
   color: var(--main-color);
   font-weight: bold;
+}
+
+#about {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+#about .icon {
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+#about .background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
