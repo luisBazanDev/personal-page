@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Luis Bazán</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="fixed bg-luis-blue-dark w-full text-white z-20 h-20 md:h-auto">
+      <div
+        class="container mx-auto px-5 py-3 flex items-center justify-between"
+      >
+        <div class="w-full flex items-center justify-between md:w-1/3">
+          <div class="text-3xl font-bold font-inconsola">Luis Bazán Rios</div>
+          <div id="menu-display" class="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+              />
+            </svg>
+          </div>
+        </div>
+        <!-- Nav meddium -->
+        <div class="w-3/5 hidden md:flex justify-between">
+          <a href="#home" class="flex font-bold gap-x-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+              />
+            </svg>
+            <div>Home</div>
+          </a>
+          <a href="#about" class="flex font-bold gap-x-1"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+              />
+            </svg>
+            <div>About</div></a
+          >
+          <a href="#projects" class="flex font-bold gap-x-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776"
+              />
+            </svg>
+
+            <div>Projects</div>
+          </a>
+          <a href="#contact" class="flex font-bold gap-x-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+              />
+            </svg>
+
+            <div>Contact</div>
+          </a>
+        </div>
+      </div>
+    </div>
+    <!-- Nav mobile -->
+    <div
+      id="nav-mobile"
+      class="hidden fixed bg-luis-blue-dark w-full pt-24 pb-8 z-10 flex flex-col pl-10 text-2xl gap-y-16 text-luis-blue-lighter lg:hidden"
+    >
+      <a href="#home" class="flex font-bold gap-x-4 items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+          />
+        </svg>
+        <div>Home</div>
+      </a>
+      <a href="#about" class="flex font-bold gap-x-4 items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
+          />
+        </svg>
+        <div>About</div>
+      </a>
+      <a href="#projects" class="flex font-bold gap-x-4 items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 9.776c.112-.017.227-.026.344-.026h15.812c.117 0 .232.009.344.026m-16.5 0a2.25 2.25 0 00-1.883 2.542l.857 6a2.25 2.25 0 002.227 1.932H19.05a2.25 2.25 0 002.227-1.932l.857-6a2.25 2.25 0 00-1.883-2.542m-16.5 0V6A2.25 2.25 0 016 3.75h3.879a1.5 1.5 0 011.06.44l2.122 2.12a1.5 1.5 0 001.06.44H18A2.25 2.25 0 0120.25 9v.776"
+          />
+        </svg>
+
+        <div>Projects</div>
+      </a>
+      <a href="#contact" class="flex font-bold gap-x-4 items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+          />
+        </svg>
+
+        <div>Contact</div>
+      </a>
+    </div>
+    <div id="home" class="bg-luis-blue-lighter pt-44 md:pb-10 w-full lg:pt-24">
+      <div class="container mx-auto flex flex-col items-center">
+        <img
+          src="./img/background-home.jpg"
+          alt="me"
+          class="rounded-full w-1/2 lg:w-1/4"
+        />
+        <div class="flex flex-col items-center w-3/4 mt-5">
+          <div class="text-2xl font-bold">👋 Hi. I'm Luis Bazán.</div>
+          <div class="text-lg font-semibold mt-5">Software developer</div>
+        </div>
+        <div class="flex w-1/2 gap-x-10 mt-40 md:w-1/3 lg:w-1/6 lg:mt-20">
+          <a href="https://github.com/luisBazanDev" class="group"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svg-link"
+            >
+              <path
+                d="M7 5C7 3.89543 7.89543 3 9 3C10.1046 3 11 3.89543 11 5C11 5.74028 10.5978 6.38663 10 6.73244V14.0396H11.7915C12.8961 14.0396 13.7915 13.1441 13.7915 12.0396V10.7838C13.1823 10.4411 12.7708 9.78837 12.7708 9.03955C12.7708 7.93498 13.6662 7.03955 14.7708 7.03955C15.8753 7.03955 16.7708 7.93498 16.7708 9.03955C16.7708 9.77123 16.3778 10.4111 15.7915 10.7598V12.0396C15.7915 14.2487 14.0006 16.0396 11.7915 16.0396H10V17.2676C10.5978 17.6134 11 18.2597 11 19C11 20.1046 10.1046 21 9 21C7.89543 21 7 20.1046 7 19C7 18.2597 7.4022 17.6134 8 17.2676V6.73244C7.4022 6.38663 7 5.74028 7 5Z"
+                fill="currentColor"
+              /></svg
+          ></a>
+          <a href="https://www.instagram.com/luis.bazan.pe/" class="group"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svg-link"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 7C9.23858 7 7 9.23858 7 12C7 14.7614 9.23858 17 12 17C14.7614 17 17 14.7614 17 12C17 9.23858 14.7614 7 12 7ZM9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12Z"
+                fill="currentColor"
+              />
+              <path
+                d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z"
+                fill="currentColor"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5 1C2.79086 1 1 2.79086 1 5V19C1 21.2091 2.79086 23 5 23H19C21.2091 23 23 21.2091 23 19V5C23 2.79086 21.2091 1 19 1H5ZM19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z"
+                fill="currentColor"
+              /></svg
+          ></a>
+          <a href="https://www.youtube.com/@luisbazandev" class="group"
+            ><svg
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="svg-link"
+            >
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M5 7H19C19.5523 7 20 7.44771 20 8V16C20 16.5523 19.5523 17 19 17H5C4.44772 17 4 16.5523 4 16V8C4 7.44772 4.44772 7 5 7ZM2 8C2 6.34315 3.34315 5 5 5H19C20.6569 5 22 6.34315 22 8V16C22 17.6569 20.6569 19 19 19H5C3.34315 19 2 17.6569 2 16V8ZM10 9L14 12L10 15V9Z"
+                fill="currentColor"
+              /></svg
+          ></a>
+        </div>
+      </div>
+    </div>
+    <div class="bg-luis-blue-lighter pt-20" id="about">
+      <div class="container mx-auto flex flex-wrap">
+        <div
+          class="w-5/6 flex flex-col pl-10 my-10 justify-center items-center md:flex-row"
+        >
+          <img
+            src="./img/background-home.jpg"
+            alt="my"
+            class="w-3/4 md:w-1/2 md:p-10 lg:w-1/3"
+          />
+          <div class="flex flex-col w-3/4 md:w-1/2 lg:w-3/4">
+            <div class="text-2xl font-bold lg:pl-0 lg:text-3xl">About Me</div>
+            <div class="text-justify lg:text-lg">
+              I am a systems engineering and computer science student at the
+              Technological University of Peru. I am a lover of code and
+              technology, every day I learn something new about programming or
+              new technologies
+            </div>
+          </div>
+        </div>
+        <div class="w-1/6 flex justify-end">
+          <div
+            class="bg-gradient-to-b from-luis-blue-dark/0 to-luis-blue-dark mr-8 h-full w-1 md:mr-16 lg:mr-0"
+          ></div>
+        </div>
+        <div class="w-full h-1 bg-luis-blue-dark mx-8 md:mx-16 lg:mx-0"></div>
+        <div
+          class="w-1/6 flex justify-left items-center h-8 ml-8 md:ml-16 lg:mx-0 lg:h-20"
+        >
+          <div class="bg-luis-blue-dark w-1 h-full"></div>
+        </div>
+      </div>
+    </div>
+    <div id="projects" class="bg-luis-blue-lighter">
+      <div class="container mx-auto flex flex-col lg:flex-row">
+        <div class="project">
+          <div class="project-container-line">
+            <div class="project-line bg-luis-blue-dark">
+              <div class="project-date">09/22</div>
+            </div>
+          </div>
+          <div class="project-container">
+            <div class="project-card">
+              <img
+                src="./img/projects/uni-developed-software.png"
+                alt="a.png"
+                class="project-img"
+              />
+              <div class="project-title">Uni developed software</div>
+              <div class="project-text">
+                This is my favorite repository, where I upload my projects
+                developed for the university. There are already discord bots,
+                arduino projects and javascript projects. I expect much
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-container-line">
+            <div class="project-line bg-luis-blue-dark">
+              <div class="project-date">08/22</div>
+            </div>
+          </div>
+          <div class="project-container">
+            <div class="project-card">
+              <img
+                src="./img/projects/random-tp.png"
+                alt="a.png"
+                class="project-img"
+              />
+              <div class="project-title">Random TP</div>
+              <div class="project-text">
+                RandomTP is a plugin created in order to simplify and improve
+                the alternatives that already exist. This is a simple project
+                and I'll try to keep it up to date regarding minecraft versions
+                etc.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="project">
+          <div class="project-container-line">
+            <div class="project-line bg-luis-blue-dark">
+              <div class="project-date">07/22</div>
+            </div>
+          </div>
+          <div class="project-container">
+            <div class="project-card">
+              <img
+                src="./img/projects/spam-wsp.png"
+                alt="a.png"
+                class="project-img"
+              />
+              <div class="project-title">Whatsapp Spam All Contacts</div>
+              <div class="project-text">
+                A script to send a message to each of the contacts you have in
+                whatsapp. A project made in order to inform all my contacts to
+                change my number and to register my new number
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="w-1 h-full bg-luis-blue-dark"></div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="contact"
+      class="flex justify-center items-center py-40 bg-luis-blue-dark text-luis-blue font-inconsola"
+    >
+      <a
+        href="mailto:luis@bazan.pe"
+        class="flex flex-col items-center md:text-lg lg:text-xl"
+      >
+        <div class="font-bold">luis@bazan.pe</div>
+        <div class="font-normal">Contact Me</div>
+      </a>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>
