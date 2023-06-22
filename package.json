@@ -1,9 +1,25 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.2.4"
-  },
+  "name": "personal-page",
+  "version": "1.0.0",
+  "description": "My personal page",
+  "main": "index.js",
   "scripts": {
-    "tailwind": "npx tailwindcss -i ./css/base.css -o ./css/style.css --watch",
-    "tailwindBuild": "npx tailwind -i ./css/base.css -o ./css/style.css --minify"
+    "dev": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisBazanDev/TwitchKillMe.git"
+  },
+  "keywords": [],
+  "author": "Luis Bazán",
+  "license": "MIT",
+  "dependencies": {
+    "@astrojs/tailwind": "^3.0.1",
+    "astro": "^2.0.10",
+    "nanostores": "^0.7.4",
+    "tailwindcss": "^3.2.6"
   }
 }
