@@ -1,0 +1,44 @@
+---
+import { es } from "date-fns/locale";
+import { format } from "date-fns";
+import { capitalize } from "lodash";
+
+var author = Astro.props.author ?? {
+  name: "Anonimo",
+  tag: "@anonimus",
+  img: "/img/profiles/anonimus.png",
+  url: "",
+};
+if (author === "default")
+  author = {
+    name: "Luis Bazán",
+    tag: "@luisbazandev",
+    img: "/img/profiles/luis-profile.jpg",
+    url: "https://luis.bazan.pe",
+  };
+const date: Date = Astro.props.date ?? new Date();
+const formattedDate = format(date, "EEEE, MMMM d, yyyy", {
+  locale: es,
+}).replace(/(\w+)/g, (match) => capitalize(match));
+const edited = Astro.props.edited ? "(Editado)" : "";
+---
+
+<div class="flex flex-col text-gray-500 mt-5 gap-5 text-sm lg:text-lg">
+  <div class="flex flex-row justify-between">
+    <div>
+      <span>{formattedDate}</span>
+    </div>
+    <div>
+      <span>{edited}</span>
+    </div>
+  </div>
+  <div class="flex flex-row w-auto gap-3">
+    <div class="w-12 md:w-16">
+      <img src={author.img} alt={author.img} />
+    </div>
+    <div class="flex flex-col">
+      <span class="font-bold">Escrito por {author.name}</span>
+      <a href={author.url}><span>{author.tag}</span></a>
+    </div>
+  </div>
+</div>
