@@ -1,6 +1,6 @@
 ---
 import BlogLayout from "../../layouts/Blog.astro";
-import Post from "../../components/Post.astro";
+import LastPosts from "../../components/posts/LastPosts.astro";
 ---
 
 <BlogLayout>
@@ -23,34 +23,7 @@ import Post from "../../components/Post.astro";
         <div
           class="grid grid-cols-1 w-full px-10 py-5 gap-4 md:p-5 md:grid-cols-2 lg:grid-cols-4"
         >
-          <Post
-            title="Post muy interesante acerca de la inteligencia artificial"
-            imgUrl="/img/projects/spam-wsp.png"
-            imgAlt="post-wa"
-            date="23/06/2023"
-            href="/blog/articulo/1"
-          />
-          <Post
-            title="Post muy interesante acerca de la inteligencia artificial"
-            imgUrl="/img/projects/spam-wsp.png"
-            imgAlt="post-wa"
-            date="23/06/2023"
-            href="/blog/articulo/1"
-          />
-          <Post
-            title="Post muy interesante acerca de la inteligencia artificial"
-            imgUrl="/img/projects/spam-wsp.png"
-            imgAlt="post-wa"
-            date="23/06/2023"
-            href="/blog/articulo/1"
-          />
-          <Post
-            title="Post muy interesante acerca de la inteligencia artificial"
-            imgUrl="/img/projects/spam-wsp.png"
-            imgAlt="post-wa"
-            date="23/06/2023"
-            href="/blog/articulo/1"
-          />
+          <LastPosts />
         </div>
       </div>
       <div class="w-1/6 flex justify-end">
@@ -71,7 +44,15 @@ import Post from "../../components/Post.astro";
       <div class="w-1/6 flex justify-start">
         <div class="bg-luis-blue-dark h-full w-1 ml-8 md:ml-16 lg:ml-0"></div>
       </div>
-      <div class="w-5/6">Aca falta algo jaja</div>
+      <div class="w-5/6 mx-auto flex flex-col items-center py-10 pr-10">
+        <div class="font-bold text-lg">Ultimo video</div>
+        <iframe
+          class="w-full aspect-[16/9] lg:w-2/3 mt-5"
+          src="https://www.youtube.com/embed/xoYaYgNR_ls"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </BlogLayout>
