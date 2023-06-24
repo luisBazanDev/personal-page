@@ -10,10 +10,10 @@ const href = Astro.props.href;
   class="w-full text-white bg-luis-blue-dark transition-transform hover:scale-105"
   href={href}
 >
-  <div class="font-bold text-sm p-2">
+  <div class="font-bold text-xs p-2">
     {title}
   </div>
-  <div class="w-full h-32 relative md:h-40">
+  <div class="w-full aspect-[2/1] relative">
     <img class="w-full h-full object-cover" src={imgUrl} alt={imgAlt} />
     <div class="text-xs absolute bottom-0 right-0 bg-luis-blue-dark p-1">
       {date}
