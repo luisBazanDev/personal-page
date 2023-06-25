@@ -4,13 +4,14 @@ const baseLanding = base ? `/#` : "#";
 ---
 
 <!-- Header -->
-<div class="fixed bg-luis-blue-dark w-full text-white z-20 h-auto">
+<div class="fixed bg-gray-800 w-full text-luis-blue-lighter z-20 h-auto">
   <div class="container mx-auto px-5 py-3 flex items-center justify-between">
     <div class="w-full flex items-center justify-between md:w-1/3">
-      <a class="text-2xl font-bold font-inconsola" href={"/" + base}
-        >Luis Bazán Rios</a
+      <a
+        class="text-2xl font-bold font-inconsola text-luis-blue"
+        href={"/" + base}>Luis Bazán Rios</a
       >
-      <div id="menu-display" class="md:hidden">
+      <div id="menu-display" class="text-gray-400 md:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -27,7 +28,7 @@ const baseLanding = base ? `/#` : "#";
       </div>
     </div>
     <!-- Nav meddium -->
-    <div class="w-3/5 hidden md:flex justify-between">
+    <div class="justify-between text-gray-400 w-3/5 hidden md:flex">
       <a href={baseLanding + "home"} class="flex font-bold gap-x-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -123,7 +124,7 @@ const baseLanding = base ? `/#` : "#";
   <!-- Nav mobile -->
   <div
     id="nav-mobile"
-    class="hidden fixed bg-luis-blue-dark w-full pt-7 pb-8 z-10 flex flex-col pl-10 text-2xl gap-y-16 text-luis-blue-lighter lg:hidden"
+    class="hidden fixed bg-gray-800 text-gray-400 w-full pt-7 pb-8 z-10 flex flex-col pl-10 text-2xl gap-y-16 text-luis-blue-lighter lg:hidden"
   >
     <a href={baseLanding + "home"} class="flex font-bold gap-x-4 items-center">
       <svg
