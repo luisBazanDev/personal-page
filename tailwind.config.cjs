@@ -5,10 +5,8 @@ module.exports = {
     extend: {
       colors: {
         "luis-blue": "#48cae4",
-        "luis-blue-dark": "#003249",
-        "luis-heavy-dark": "#03045e",
-        "luis-blue-light": "#90e0ef",
-        "luis-blue-lighter": "#caf0f8",
+        "luis-blue-dark": "#0C0C0C",
+        "luis-gray-lighter": "#1C1C1C",
       },
       fontFamily: {
         inconsola: "Inconsolata, monospace",
