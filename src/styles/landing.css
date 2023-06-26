@@ -22,10 +22,10 @@
     @apply w-5/6 pl-3 pr-8 py-5 md:pr-16 lg:px-0;
   }
   .project-card {
-    @apply flex flex-col bg-white rounded-lg lg:mt-5;
+    @apply flex flex-col border border-gray-400 shadow-lg  bg-white p-3 rounded-lg lg:mt-5;
   }
   .project-img {
-    @apply rounded-t-lg h-40 object-cover md:h-60;
+    @apply rounded-t-lg h-40 object-cover border border-gray-300 md:h-60;
   }
   .project-title {
     @apply font-bold text-2xl mx-4 lg:text-xl;
