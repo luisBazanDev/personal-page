@@ -28,10 +28,10 @@
     @apply rounded-t-lg h-40 object-cover border border-gray-300 md:h-60;
   }
   .project-title {
-    @apply font-bold text-2xl mx-4 lg:text-xl;
+    @apply font-bold text-2xl  lg:text-xl;
   }
   .project-text {
-    @apply mx-4 mt-2 mb-4 lg:font-light;
+    @apply text-justify mt-2 mb-4 lg:font-light;
   }
 
   .svg-link {
