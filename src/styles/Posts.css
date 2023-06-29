@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .post-content p {
+    @apply mt-3 mx-5 text-justify md:mx-0 lg:text-xl lg:mr-32;
+  }
+
+  .post-content h1 {
+    @apply flex justify-center text-3xl lg:text-6xl font-bold;
+  }
+
+  .post-content h2 {
+    @apply mt-10 mx-5 text-2xl font-bold md:mx-0 lg:text-4xl lg:mr-32;
+  }
+
+  .post-content pre {
+    @apply p-3 mx-5 md:mx-0 lg:mr-32 rounded;
+  }
+}
