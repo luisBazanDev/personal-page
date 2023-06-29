@@ -20,7 +20,7 @@ if (author === "default")
 const date: Date = Astro.props.date ?? new Date();
 const formattedDate = format(date, "EEEE, MMMM d, yyyy", {
   locale: es,
-}).replace(/(\w+)/g, (match) => capitalize(match));
+});
 const edited = Astro.props.edited ? "(Editado)" : "";
 ---
 
