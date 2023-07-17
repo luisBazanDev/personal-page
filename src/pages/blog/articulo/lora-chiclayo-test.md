@@ -1,8 +1,7 @@
 ---
 layout: "../../../layouts/PostLayout.astro"
-title: "Este es un articulo basado en un proyecto de investigación realizado por estudiantes de utp"
+title: "Proyecto de investigación realizado por estudiantes de utp acerca de la tecnología LoRa"
 draft: false
-author: default
 date: 2023-07-18
 ---
 
