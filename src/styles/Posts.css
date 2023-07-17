@@ -17,4 +17,7 @@
   .post-content pre {
     @apply p-3 mx-5 md:mx-0 lg:mr-32 rounded;
   }
+  table {
+    @apply w-max p-3 mx-5 md:mx-0 lg:mr-32;
+  }
 }
