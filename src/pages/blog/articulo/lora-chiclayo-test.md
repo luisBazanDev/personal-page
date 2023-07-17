@@ -32,6 +32,11 @@ Para mejorar la comunicación en estas zonas, proponemos la instalación de repe
 | 3      | -85 Dbm | -4 Db  | 260 m     | Alta          |
 | 4      | -95 Dbm | -17 Db | 320 m     | Alta          |
 | 5      | -92 Dbm | -13 Db | 780 m     | Alta          |
+| 5      | -94 Dbm | 0 Db   | 300 m     | Media         |
+| 2      | -87 Dbm | -3 Db  | 420 m     | Baja          |
+| 4      | -91 Dbm | -18 Db | 750 m     | Baja          |
+| 5      | -87 Dbm | -5 Db  | 930 m     | Baja          |
+| 5      | -81 Dbm | 5 Db   | 1.2 Km    | Baja          |
 
 ## Conclusiones
 
