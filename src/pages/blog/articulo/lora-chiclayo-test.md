@@ -41,3 +41,18 @@ Para mejorar la comunicación en estas zonas, proponemos la instalación de repe
 ## Conclusiones
 
 En conclusión, nuestro proyecto demostró que la comunicación mediante LoRa es una solución efectiva para establecer comunicación en la ciudad de Chiclayo. Sin embargo, es importante considerar los obstáculos que pueden afectar la señal y proponer soluciones para mejorarla. Esperamos que nuestros resultados sean útiles para futuros proyectos de comunicación en la ciudad.
+
+### Adjuntos
+
+- [Repositorio del proyecto](https://github.com/luisBazanDev/final-project-caf2)
+- [Diagramas](https://github.com/luisBazanDev/final-project-caf2/blob/main/diagrams)
+
+### Participantes del proyecto
+
+- Bazán Rios Luis Enrique
+- Salvador Silva Lindel Junior
+- Coronado Bautista Rosa Esmeralda
+- Llatas Otoya Sebastian
+- Díaz Montalvo José
+- Arce Cruzado José Omar
+- Zeña Bances Cristhian
