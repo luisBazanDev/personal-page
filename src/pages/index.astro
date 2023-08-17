@@ -2,6 +2,7 @@
 import "../styles/landing.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import ProjectCard from "../components/ProjectCard.astro";
 ---
 
 <!DOCTYPE html>
@@ -101,73 +102,36 @@ import Footer from "../components/Footer.astro";
     </div>
     <div id="projects" class="bg-white">
       <div class="container mx-auto flex flex-col lg:flex-row">
-        <div class="project">
-          <div class="project-container-line">
-            <div class="project-line bg-luis-blue-dark">
-              <div class="project-date">01/23</div>
-            </div>
-          </div>
-          <div class="project-container">
-            <div class="project-card">
-              <img
-                src="./img/projects/twitch-kill-me.jpg"
-                alt="a.png"
-                class="project-img"
-              />
-              <div class="project-title">Twitch Kill Me</div>
-              <div class="project-text">
-                TwitchKillMe is a plugin built for Minecraft and introduces
-                Twitch Streamers for Minecraft vs Chat events, it's easy and
-                simplified for new users.
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <div class="project-container-line">
-            <div class="project-line bg-luis-blue-dark">
-              <div class="project-date">09/22</div>
-            </div>
-          </div>
-          <div class="project-container">
-            <div class="project-card">
-              <img
-                src="./img/projects/uni-developed-software.png"
-                alt="a.png"
-                class="project-img"
-              />
-              <div class="project-title">Uni developed software</div>
-              <div class="project-text">
-                This is my favorite repository, where I upload my projects
-                developed for the university. There are already discord bots,
-                arduino projects and javascript projects. I expect much
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="project">
-          <div class="project-container-line">
-            <div class="project-line bg-luis-blue-dark">
-              <div class="project-date">08/22</div>
-            </div>
-          </div>
-          <div class="project-container">
-            <div class="project-card">
-              <img
-                src="./img/projects/random-tp.png"
-                alt="a.png"
-                class="project-img"
-              />
-              <div class="project-title">Random TP</div>
-              <div class="project-text">
-                RandomTP is a plugin created in order to simplify and improve
-                the alternatives that already exist. This is a simple project
-                and I'll try to keep it up to date regarding minecraft versions
-                etc.
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProjectCard
+          date={new Date("04-03-2023")}
+          title="Kits API"
+          description="A Bukkit/Spigot API for quick and easy kitting to get started. It was designed for a better way to do this."
+          img={{
+            url: "https://github.com/luisBazanDev/KitsAPI/blob/main/assets/icon.png?raw=true",
+            mode: "contain",
+            class: "bg-gray-700",
+          }}
+        />
+        <ProjectCard
+          date={new Date("01-01-2023")}
+          title="Twitch Kill Me"
+          description={`TwitchKillMe is a plugin built for Minecraft and introduces
+          Twitch Streamers for Minecraft vs Chat events, it's easy and
+          simplified for new users.`}
+          img={{
+            url: "./img/projects/twitch-kill-me.jpg",
+          }}
+        />
+        <ProjectCard
+          date={new Date("09-01-2022")}
+          title="Uni developed software"
+          description={`This is my favorite repository, where I upload my projects
+            developed for the university. There are already discord bots,
+            arduino projects and javascript projects. I expect much`}
+          img={{
+            url: "./img/projects/uni-developed-software.png",
+          }}
+        />
         <div class="hidden lg:block">
           <div class="w-1 h-full bg-luis-blue-dark"></div>
         </div>
@@ -176,28 +140,27 @@ import Footer from "../components/Footer.astro";
         <div class="hidden lg:block">
           <div class="w-1 h-full bg-luis-blue-dark"></div>
         </div>
-        <div class="project">
-          <div class="project-container-line">
-            <div class="project-line bg-luis-blue-dark">
-              <div class="project-date">07/22</div>
-            </div>
-          </div>
-          <div class="project-container">
-            <div class="project-card">
-              <img
-                src="./img/projects/spam-wsp.png"
-                alt="a.png"
-                class="project-img"
-              />
-              <div class="project-title">Whatsapp Spam All Contacts</div>
-              <div class="project-text">
-                A script to send a message to each of the contacts you have in
-                whatsapp. A project made in order to inform all my contacts to
-                change my number and to register my new number
-              </div>
-            </div>
-          </div>
-        </div>
+        <ProjectCard
+          date={new Date("07-01-2022")}
+          title="Whatsapp Spam All Contacts"
+          description={`A script to send a message to each of the contacts you have in
+            whatsapp. A project made in order to inform all my contacts to
+            change my number and to register my new number`}
+          img={{
+            url: "./img/projects/spam-wsp.png",
+          }}
+        />
+        <ProjectCard
+          date={new Date("08-01-2022")}
+          title="Random TP"
+          description={`RandomTP is a plugin created in order to simplify and improve
+            the alternatives that already exist. This is a simple project
+            and I'll try to keep it up to date regarding minecraft versions
+            etc.`}
+          img={{
+            url: "./img/projects/random-tp.png",
+          }}
+        />
       </div>
     </div>
     <Footer />

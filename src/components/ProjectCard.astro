@@ -1,0 +1,32 @@
+---
+import { format } from "date-fns";
+const props = Astro.props;
+const img = props.img;
+const imgMode = img.mode
+  ? img.mode.toLowerCase() == "contain"
+    ? "object-contain"
+    : ""
+  : "";
+const date = props.date ?? new Date();
+---
+
+<div class="project">
+  <div class="project-container-line">
+    <div class="project-line bg-luis-blue-dark">
+      <div class="project-date">{format(date, "MM/yy")}</div>
+    </div>
+  </div>
+  <div class="project-container">
+    <div class="project-card">
+      <img
+        src={img.url ?? "./img/favicon.png"}
+        alt={props.title + " - Icon"}
+        class={"project-img " + imgMode + " " + img.class}
+      />
+      <div class="project-title">{props.title ?? "No title"}</div>
+      <div class="project-text">
+        {props.description ?? "No description"}
+      </div>
+    </div>
+  </div>
+</div>
