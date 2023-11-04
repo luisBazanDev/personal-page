@@ -3,6 +3,8 @@ layout: "../../../layouts/PostLayout.astro"
 title: "Proyecto de investigación realizado por estudiantes de UTP acerca de la tecnología LoRa"
 description: "En este artículo, presentamos los resultados de nuestro proyecto final de la Facultad de Ingeniería, en el cual analizamos la comunicación mediante el uso de LoRa en la ciudad de Chiclayo. Utilizamos el Devkit LoRa RAK3172, el dispositivo AU-915-928MHz y el protocolo LoRaWAN para lograr nuestros objetivos."
 draft: false
+keywords: lora, chiclayo, RAK3172, LoRaWAN
+thumbnail: /img/articulos/thumbnails/lora-chiclayo-test.png
 date: 2023-07-18
 ---
 

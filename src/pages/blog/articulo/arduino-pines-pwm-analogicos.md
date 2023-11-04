@@ -6,7 +6,7 @@ author: default
 keywords: arduino, pines pwm, pines analogicos
 thumbnail: /img/articulos/thumbnails/arduino-pines-pwm-analogicos.png
 draft: false
-date: 2023-10-08
+date: 2023-11-03
 ---
 
 En este artículo veremos cuáles son las diferencias entre los pines PWM digitales y los pines analógicos en Arduino.
