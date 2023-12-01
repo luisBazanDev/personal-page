@@ -1,22 +1,11 @@
 ---
 import { es } from "date-fns/locale/index.js";
 import { format } from "date-fns";
+import { resolveAuthor } from "../../utils/authorUtils.js";
 import _ from "lodash";
 const { capitalize } = _;
 
-var author = Astro.props.author ?? {
-  name: "Anonimo",
-  tag: "@anonimus",
-  img: "/img/profiles/anonimus.png",
-  url: "",
-};
-if (author === "default")
-  author = {
-    name: "Luis Bazán",
-    tag: "@luisbazandev",
-    img: "/img/profiles/luis-profile.jpg",
-    url: "https://luis.bazan.pe",
-  };
+var author = resolveAuthor(Astro.props.author);
 const date: Date = Astro.props.date ?? new Date();
 const formattedDate = format(date, "EEEE, MMMM d, yyyy", {
   locale: es,

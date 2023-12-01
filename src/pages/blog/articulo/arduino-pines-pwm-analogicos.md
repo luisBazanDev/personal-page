@@ -1,10 +1,15 @@
 ---
 layout: "../../../layouts/PostLayout.astro"
 title: "Pines analógicos vs digitales PWM"
-draft: false
+description: "En este artículo veremos cuáles son las diferencias entre los pines PWM digitales y los pines analógicos en Arduino."
 author: default
-date: 2023-10-08
+keywords: arduino, pines pwm, pines analogicos
+thumbnail: /img/articulos/thumbnails/arduino-pines-pwm-analogicos.png
+draft: false
+date: 2023-11-03
 ---
+
+En este artículo veremos cuáles son las diferencias entre los pines PWM digitales y los pines analógicos en Arduino.
 
 En arduino existen dos formas de tomar valores de entradas analogicas. Los pines analógicos (A0, A1, A2, A3, A4, A5 en Arduino UNO) y los pines digitales PWM (3, 5, 6, 10, 11 en Arduino UNO)
 
@@ -31,7 +36,9 @@ El uso de los pines analógicos está pensado para sensores donde se busque una 
 Los pines digitales PWM se utilizan principalmente en sensores donde no se requiere una precisión extrema, sino que se prioriza la velocidad de respuesta y la eficiencia de recursos. Además, estos pines tienen la capacidad de no solo leer, sino también escribir valores. Un ejemplo de aplicación sería con LEDs, que, si tuvieran un valor analógico de 0 a 1023, el ojo humano no sería capaz de distinguir cambios mínimos, lo que resultaría en un gasto de recursos innecesario. Otro caso de uso puede ser un potenciómetro que controle el brillo de un LED. Si el potenciómetro está en un pin analógico y el LED en un pin PWM, se debe realizar una operación de conversión entre ambos valores, lo cual puede ser innecesario :/.
 
 ## Casos de uso
-**Links a guías gratuitas*
+
+\*_Links a guías gratuitas_
+
 - [Servo motores (SG90)](https://docs.arduino.cc/learn/electronics/servo-motors) - PWM
 - [LDR](https://arduinogetstarted.com/tutorials/arduino-ldr-module) - Analógico
 - [Potenciometro](https://docs.arduino.cc/learn/electronics/potentiometer-basics) - Analógico
