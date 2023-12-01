@@ -1,0 +1,93 @@
+---
+import Proyecto from "../components/expoferia/Proyecto.jsx";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+    <title>Expoferia 2023 UTP</title>
+  </head>
+  <body class="text-white">
+    <div
+      class="flex flex-col justify-between p-5 bg-slate-950 pb-48 h-min-screen"
+    >
+      <div class="w-full text-center text-3xl font-bold">
+        Expoferia 2023 UTP
+      </div>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-36 h-full w-full justify-center items-center z-10 gap-6 mt-8"
+      >
+        <Proyecto
+          title="Research projects"
+          description="----"
+          content="content here"
+          tag="Investigacion"
+          date="2023"
+          techs={[]}
+          img=""
+        />
+        <Proyecto
+          title="Nic Maish App"
+          description="----"
+          content="content here"
+          tag="Hackathon"
+          date="2023"
+          techs={[]}
+          img=""
+        />
+        <Proyecto
+          title="Voice command"
+          description="----"
+          content="content here"
+          tag="POO"
+          date="2023"
+          techs={["python"]}
+          img=""
+        />
+        <Proyecto
+          title="Tabla Periodica"
+          description="----"
+          content="content here"
+          tag="POO"
+          date="2023"
+          techs={[]}
+          img=""
+        />
+        <Proyecto
+          title="Music Info Library"
+          description="Es una biblioteca musical, basada en archivos mp3"
+          content="Se extraen meticulosamente todos los metadatos de cada canción para presentarlos de manera clara y organizada en una interfaz intuitiva."
+          tag="POO"
+          date="2023"
+          techs={["java", "js", "css", "tailwind"]}
+          img="https://i.imgur.com/LCQP3pO.png"
+        />
+        <Proyecto
+          title="Twitch Kill Me"
+          description="Es un plugin de minecraft que junta la plataforma de streaming twitch con el videojuego."
+          content='Inicialmente orientado al evento "Chat VS Streamer", el enfoque se centra en ejecutar esta dinámica directamente en el lado del servidor, lo que optimiza la experiencia para computadoras con recursos más limitados.'
+          tag="Personal"
+          date="2023"
+          techs={["java", "js", "css", "tailwind"]}
+          img="/img/projects/twitch-kill-me.jpg"
+        />
+        <Proyecto
+          title="CS16MC"
+          description="Es un plugin de minecraft que recrea Counter Strike 1.6 en Minecraft"
+          content="El proyecto parte de la nostalgia de los buenos momentos jugando a Counter Strike 1.6, y se basa en recrear las mecánicas del juego en Minecraft para ser lo más fiel posible al juego."
+          tag="Personal"
+          date="2023"
+          techs={["java"]}
+          img="https://i.imgur.com/XyBHUnT.png"
+        />
+      </div>
+      <div
+        class="fixed w-full h-96 top-full -translate-y-1/3 rounded-full bg-red-950 blur-3xl z-0"
+      >
+      </div>
+    </div>
+  </body>
+</html>../components/expoferia/proyecto.jsx
