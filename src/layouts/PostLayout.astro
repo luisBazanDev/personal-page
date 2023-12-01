@@ -1,19 +1,29 @@
 ---
+import { resolveAuthor } from "../utils/authorUtils.js";
 import BlogLayout from "./Blog.astro";
 import LastPosts from "../components/posts/LastPosts.astro";
 import PostMeta from "../components/posts/PostMeta.astro";
 import "../styles/Posts.css";
 const { frontmatter } = Astro.props;
-const date = new Date(frontmatter.date);
+const { description, author, keywords, title, thumbnail, date } = frontmatter;
+const dateObj = new Date(frontmatter.date);
 ---
 
-<BlogLayout>
+<BlogLayout
+  description={description}
+  author={resolveAuthor(author).name}
+  keywords={keywords}
+  title={title}
+  image={thumbnail}
+  date={date ? date.slice(0, 10) : date}
+  isArticle
+>
   <div
     class="flex flex-col bg-luis-blue-lighter py-32 px-2 w-full md:py-32 lg:py-40 lg:flex-row"
   >
     <div class="w-full lg:w-3/4 md:px-32 post-content">
       <h1>{frontmatter.title}</h1>
-      <PostMeta author={frontmatter.author} date={date} />
+      <PostMeta author={frontmatter.author} date={dateObj} />
       <slot />
     </div>
     <div class="flex flex-col w-full mx-auto items-center md:w-full lg:w-1/4">
