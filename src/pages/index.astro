@@ -1,5 +1,8 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import { ReactComponent as Github } from "@assets/icons/github.svg";
+import { ReactComponent as Linkedin } from "@assets/icons/linkedin.svg";
+import { ReactComponent as Youtube } from "@assets/icons/youtube.svg";
 ---
 
 <MainLayout>
@@ -17,31 +20,26 @@ import MainLayout from "../layouts/MainLayout.astro";
       and connecting people through creativity. dCurrently crafting innovative
       solutions at the intersection of engineering, community, and education.
     </p>
-    <ul class="mt-4 mb-16 flex gap-4">
+    <ul class="mt-4 mb-16 flex gap-4 items-center">
       <li>
         <a
           href="https://github.com/luisbazandev"
-          class="flex hover:rotate-45 hover:text-light_blue transition-transform"
-          >a</a
+          class="flex hover:rotate-12 hover:text-light_blue transition-transform w-9 p-1"
+          ><Github /></a
         >
       </li>
       <li>
         <a
-          href="https://github.com/luisbazandev"
-          class="flex hover:rotate-45 hover:text-rose transition-transform">a</a
+          href="https://www.linkedin.com/in/luisbazandev/"
+          class="flex hover:rotate-12 hover:text-rose transition-transform w-9 p-1"
+          ><Linkedin /></a
         >
       </li>
       <li>
         <a
-          href="https://github.com/luisbazandev"
-          class="flex hover:rotate-45 hover:text-light_blue transition-transform"
-          >a</a
-        >
-      </li>
-      <li>
-        <a
-          href="https://github.com/luisbazandev"
-          class="flex hover:rotate-45 hover:text-rose transition-transform">a</a
+          href="https://www.youtube.com/@luisbazandev"
+          class="flex hover:rotate-12 hover:text-light_blue transition-transform w-9 p-1"
+          ><Youtube /></a
         >
       </li>
     </ul>
