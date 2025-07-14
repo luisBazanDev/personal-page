@@ -1,181 +1,49 @@
 ---
-import "../styles/landing.css";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Portfolio - Luis Bazán</title>
-    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="I'm systems engineering and computer science student at the Technological University of Peru. Lover of code and technology, every day I learn something new about programming or new technologies"
-    />
-    <meta name="robots" content="index, follow" />
-  </head>
-  <body>
-    <Header />
-    <div
-      id="home"
-      class="from-gray-600 to-white bg-gradient-to-b pt-44 md:pb-10 w-full h-[100vh] lg:pt-24"
-    >
-      <div class="container mx-auto flex flex-col items-center">
-        <img
-          src="./img/background-home.jpg"
-          alt="me"
-          class="rounded-full w-1/2 lg:w-1/4"
-        />
-        <div class="flex flex-col items-center w-3/4 mt-5 text-black">
-          <div class="text-2xl font-bold">👋 Hi. I'm Luis Bazán.</div>
-          <div class="text-lg font-semibold mt-5 text-gray-600">
-            Software developer
-          </div>
-        </div>
-        <div
-          class="flex justify-center w-1/2 gap-x-10 mt-40 md:w-1/3 lg:w-1/6 lg:mt-20"
+<MainLayout>
+  <div class="bg-blue w-full text-gray flex flex-col items-center pt-36">
+    <h1 class="font-mono text-4xl md:text-8xl flex group gap-4 px-16">
+      <span class="group-hover:text-rose text-nowrap text-white/80"
+        >Hi! I'm</span
+      >
+      <span class="group-hover:text-light_blue text-nowrap text-white/80"
+        >Luis Bazan!</span
+      >
+    </h1>
+    <p class="text-center w-1/2 mt-8">
+      I’m all about building meaningful tech projects, teaching what I learn,
+      and connecting people through creativity. dCurrently crafting innovative
+      solutions at the intersection of engineering, community, and education.
+    </p>
+    <ul class="mt-4 mb-16 flex gap-4">
+      <li>
+        <a
+          href="https://github.com/luisbazandev"
+          class="flex hover:rotate-45 hover:text-light_blue transition-transform"
+          >a</a
         >
-          <a
-            href="https://github.com/luisBazanDev"
-            class="group"
-            aria-label="My personal Github"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="svg-link"
-            >
-              <path
-                d="M7 5C7 3.89543 7.89543 3 9 3C10.1046 3 11 3.89543 11 5C11 5.74028 10.5978 6.38663 10 6.73244V14.0396H11.7915C12.8961 14.0396 13.7915 13.1441 13.7915 12.0396V10.7838C13.1823 10.4411 12.7708 9.78837 12.7708 9.03955C12.7708 7.93498 13.6662 7.03955 14.7708 7.03955C15.8753 7.03955 16.7708 7.93498 16.7708 9.03955C16.7708 9.77123 16.3778 10.4111 15.7915 10.7598V12.0396C15.7915 14.2487 14.0006 16.0396 11.7915 16.0396H10V17.2676C10.5978 17.6134 11 18.2597 11 19C11 20.1046 10.1046 21 9 21C7.89543 21 7 20.1046 7 19C7 18.2597 7.4022 17.6134 8 17.2676V6.73244C7.4022 6.38663 7 5.74028 7 5Z"
-                fill="currentColor"></path></svg
-            ></a
-          >
-          <a
-            href="https://www.youtube.com/@luisbazandev"
-            class="group"
-            aria-label="My youtube channel"
-            ><svg
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              class="svg-link"
-            >
-              <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
-                d="M5 7H19C19.5523 7 20 7.44771 20 8V16C20 16.5523 19.5523 17 19 17H5C4.44772 17 4 16.5523 4 16V8C4 7.44772 4.44772 7 5 7ZM2 8C2 6.34315 3.34315 5 5 5H19C20.6569 5 22 6.34315 22 8V16C22 17.6569 20.6569 19 19 19H5C3.34315 19 2 17.6569 2 16V8ZM10 9L14 12L10 15V9Z"
-                fill="currentColor"></path></svg
-            ></a
-          >
-        </div>
-      </div>
-    </div>
-    <div class="bg-white pt-20" id="about">
-      <div class="container mx-auto flex flex-wrap">
-        <div
-          class="w-5/6 flex flex-col pl-10 my-10 justify-center items-center md:flex-row"
+      </li>
+      <li>
+        <a
+          href="https://github.com/luisbazandev"
+          class="flex hover:rotate-45 hover:text-rose transition-transform">a</a
         >
-          <img
-            src="./img/background-home.jpg"
-            alt="my"
-            class="w-3/4 md:w-1/2 md:p-10 lg:w-1/3"
-          />
-          <div class="flex flex-col w-3/4 md:w-1/2 lg:w-3/4">
-            <div
-              class="text-2xl font-bold lg:pl-0 lg:text-3xl text-luis-blue-dark"
-            >
-              About Me
-            </div>
-            <div class="text-justify lg:text-lg text-gray-600">
-              I'm systems engineering and computer science student at the
-              Technological University of Peru. I lover of code and technology,
-              every day I learn something new about programming or new
-              technologies
-            </div>
-          </div>
-        </div>
-        <div class="w-1/6 flex justify-end">
-          <div
-            class="bg-gradient-to-b from-luis-blue-dark/0 to-luis-blue-dark mr-8 h-full w-1 md:mr-16 lg:mr-0"
-          >
-          </div>
-        </div>
-        <div class="w-full h-1 bg-luis-blue-dark mx-8 md:mx-16 lg:mx-0"></div>
-        <div
-          class="w-1/6 flex justify-left items-center h-8 ml-8 md:ml-16 lg:mx-0 lg:h-20"
+      </li>
+      <li>
+        <a
+          href="https://github.com/luisbazandev"
+          class="flex hover:rotate-45 hover:text-light_blue transition-transform"
+          >a</a
         >
-          <div class="bg-luis-blue-dark w-1 h-full"></div>
-        </div>
-      </div>
-    </div>
-    <div id="projects" class="bg-white">
-      <div class="container mx-auto flex flex-col lg:flex-row">
-        <ProjectCard
-          date={new Date("04-03-2023")}
-          title="Kits API"
-          description="A Bukkit/Spigot API for quick and easy kitting to get started. It was designed for a better way to do this."
-          img={{
-            url: "https://github.com/luisBazanDev/KitsAPI/blob/main/assets/icon.png?raw=true",
-            mode: "contain",
-            class: "bg-gray-700",
-          }}
-        />
-        <ProjectCard
-          date={new Date("01-01-2023")}
-          title="Twitch Kill Me"
-          description={`TwitchKillMe is a plugin built for Minecraft and introduces
-          Twitch Streamers for Minecraft vs Chat events, it's easy and
-          simplified for new users.`}
-          img={{
-            url: "./img/projects/twitch-kill-me.jpg",
-          }}
-        />
-        <ProjectCard
-          date={new Date("09-01-2022")}
-          title="Uni developed software"
-          description={`This is my favorite repository, where I upload my projects
-            developed for the university. There are already discord bots,
-            arduino projects and javascript projects. I expect much`}
-          img={{
-            url: "./img/projects/uni-developed-software.png",
-          }}
-        />
-        <div class="hidden lg:block">
-          <div class="w-1 h-full bg-luis-blue-dark"></div>
-        </div>
-      </div>
-      <div class="container mx-auto flex flex-col lg:flex-row justify-end">
-        <div class="hidden lg:block">
-          <div class="w-1 h-full bg-luis-blue-dark"></div>
-        </div>
-        <ProjectCard
-          date={new Date("07-01-2022")}
-          title="Whatsapp Spam All Contacts"
-          description={`A script to send a message to each of the contacts you have in
-            whatsapp. A project made in order to inform all my contacts to
-            change my number and to register my new number`}
-          img={{
-            url: "./img/projects/spam-wsp.png",
-          }}
-        />
-        <ProjectCard
-          date={new Date("08-01-2022")}
-          title="Random TP"
-          description={`RandomTP is a plugin created in order to simplify and improve
-            the alternatives that already exist. This is a simple project
-            and I'll try to keep it up to date regarding minecraft versions
-            etc.`}
-          img={{
-            url: "./img/projects/random-tp.png",
-          }}
-        />
-      </div>
-    </div>
-    <Footer />
-  </body>
-</html>
+      </li>
+      <li>
+        <a
+          href="https://github.com/luisbazandev"
+          class="flex hover:rotate-45 hover:text-rose transition-transform">a</a
+        >
+      </li>
+    </ul>
+  </div>
+</MainLayout>

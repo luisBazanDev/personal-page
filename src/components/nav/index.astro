@@ -1,0 +1,32 @@
+---
+const isActive = (path) => {
+  return Astro.url.pathname === path ? "active" : "";
+};
+import "./style.css";
+---
+
+<nav
+  class="flex font-light text-sm absolute top-4 left-1/2 -translate-x-1/2 text-gray"
+>
+  <ul class="flex gap-6">
+    <li>
+      <a href="/" class={isActive("/")}>Home</a>
+    </li>
+    <li>
+      <a href="/story" class={isActive("/story")}>Story</a>
+    </li>
+    <li>
+      <a href="/work" class={isActive("/work")}>Work</a>
+    </li>
+    <li>
+      <a href="/wall-of-comments" class={isActive("/wall-of-comments")}
+        >Wall of comments</a
+      >
+    </li>
+    <li>
+      <a href="/blog" target="_blank" class={isActive("/wall-of-comments")}
+        >Blog</a
+      >
+    </li>
+  </ul>
+</nav>
