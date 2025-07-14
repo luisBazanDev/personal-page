@@ -18,10 +18,10 @@
   "license": "MIT",
   "dependencies": {
     "@astrojs/react": "^2.2.1",
-    "@astrojs/tailwind": "^3.0.1",
+    "@astrojs/tailwind": "^6.0.2",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
-    "astro": "^2.0.10",
+    "astro": "^5.11.0",
     "date-fns": "^2.30.0",
     "lodash": "^4.17.21",
     "nanostores": "^0.7.4",
