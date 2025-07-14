@@ -1,0 +1,7 @@
+nav .active {
+  @apply text-rose font-medium;
+}
+
+nav a:hover {
+  @apply text-rose;
+}

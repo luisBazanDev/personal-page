@@ -4,16 +4,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "luis-blue": "#48cae4",
-        "luis-blue-heavy": "#002da8",
-        "luis-blue-dark": "#0C0C0C",
-        "luis-gray-lighter": "#1C1C1C",
+        blue: "#223257",
+        light_blue: "#C4D0E8",
+        amethyst: "#A2A9FF",
+        rose: "#F9BCB2",
+        gray: "#DDE5F0",
       },
       fontFamily: {
-        inconsola: "Inconsolata, monospace",
-      },
-      spacing: {
-        26: "6.5rem",
+        sans: ["Karla", "sans-serif"],
+        mono: ["Koulen", "monospace"],
       },
     },
   },
