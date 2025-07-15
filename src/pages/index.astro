@@ -1,9 +1,13 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
 import { ReactComponent as Github } from "@assets/icons/github.svg";
 import { ReactComponent as Linkedin } from "@assets/icons/linkedin.svg";
 import { ReactComponent as Youtube } from "@assets/icons/youtube.svg";
-import { Image } from "astro:assets";
+import { ReactComponent as People } from "@assets/icons/people.svg";
+import { ReactComponent as GlobeLatam } from "@assets/icons/globe-latam.svg";
+import { ReactComponent as GraduationCap } from "@assets/icons/graduation-cap.svg";
+import Comment from "../components/comment/index.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout>
@@ -46,18 +50,83 @@ import { Image } from "astro:assets";
       </li>
     </ul>
   </div>
-  <div class="flex flex-col md:grid md:grid-cols-2">
-    <div class="w-full grayscale hover:grayscale-0 aspect-square">
+  <div class="grid grid-cols-1 md:grid-cols-2 h-min">
+    <div
+      class="grayscale hover:grayscale-0 relative overflow-hidden w-full min-h-96"
+    >
       <Image
-        src=""
-        alt=""
-        class="object-cover h-full"
+        src="/comunity-lead.jpg"
+        alt="Picture of Luis Bazan"
+        class="h-full absolute w-full object-cover"
         inferSize
         loading="lazy"
       />
     </div>
-    <div class="p-24">
-      <h2 class="font-mono text-blue text-5xl">COMMUNITY LEADER</h2>
+    <div class="flex flex-col p-8 md:p-24 text-blue gap-8 h-min">
+      <h2 class="font-mono text-5xl">COMMUNITY LEADER, Developer & Educator</h2>
+      <p class="">
+        I believe that knowledge grows when shared. That’s why I lead and
+        support student communities focused on tech, creativity, and
+        collaboration.
+        <br />
+        <br />
+        From organizing workshops and study sessions to building tools that empower
+        others, I help people learn, build, and connect — together.
+      </p>
+      <h3 class="font-mono text-3xl">HIGHLIGHTS</h3>
+      <ul class="flex flex-col gap-8">
+        <li class="bg-white flex p-6 gap-4">
+          <div><People class="w-6 text-blue/80" /></div>
+          <span
+            >Built a community of students who grow by teaching each other.</span
+          >
+        </li>
+        <li class="bg-white flex p-6 gap-4">
+          <div><GraduationCap class="w-6 text-blue/80" /></div>
+          <span
+            >Mentored fellow students through projects, talks, and one-on-one
+            sessions.</span
+          >
+        </li>
+        <li class="bg-white flex p-6 gap-4">
+          <div><GlobeLatam class="w-6 text-blue/80" /></div>
+          <span
+            >Created events that combine tech, creativity, and local culture to
+            make learning more engaging and meaningful.</span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex flex-col text-blue p-8 md:p-24 items-center gap-24">
+    <h3 class="font-mono text-4xl md:text-5xl">Hear it from others</h3>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 px-4 w-full md:w-3/4 lg:w-3/5 gap-16"
+    >
+      <Comment
+        authorName="Junior D."
+        authorPosition="Software Engineer"
+        authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
+        content="I was extremely impressed by Luis's ability to organize, build, and facilitate developer communities. She has an exceptional talent and positive approach. I wouldn't hesitate to recommend Luis to any team looking to grow the reputation and community of their developer focused product."
+      />
+      <Comment
+        authorName="Junior F."
+        authorPosition="IA Engineer"
+        authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
+        content="A dynamic and sincere community builder, Luis brings a high level of passion and energy to her work that not only captivates success but a deeper mission that serves many. It's both a joy and an inspiration to work with Luis!"
+      />
+      <Comment
+        authorName="Mr Aaron"
+        authorPosition="Cloud Architecture"
+        authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
+        content="Luis is a delight and creative force. I've worked with her before for DevRel/OSS community building and I admire her commitment to serving her community with consistent and educational tech content."
+      />
+      <Comment
+        authorName="Mr J. Delgado"
+        authorPosition="Developer"
+        authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
+        content="I've seen Luis set the bar for everyone else. She built and nurtured the community, managed a team, organized and ran conferences in record time, created quality screencasts, gave talks, wrote articles, held meetups, and put us on the map. I often wondered if we had the same 24 hours in a day."
+      />
     </div>
   </div>
 </MainLayout>
