@@ -3,9 +3,11 @@ import MainLayout from "../layouts/MainLayout.astro";
 import { ReactComponent as Github } from "@assets/icons/github.svg";
 import { ReactComponent as Linkedin } from "@assets/icons/linkedin.svg";
 import { ReactComponent as Youtube } from "@assets/icons/youtube.svg";
+import { Image } from "astro:assets";
 ---
 
 <MainLayout>
+  <!-- Header -->
   <div class="bg-blue w-full text-gray flex flex-col items-center pt-36">
     <h1 class="font-mono text-4xl md:text-8xl flex group gap-4 px-16">
       <span class="group-hover:text-rose text-nowrap text-white/80"
@@ -15,7 +17,7 @@ import { ReactComponent as Youtube } from "@assets/icons/youtube.svg";
         >Luis Bazan!</span
       >
     </h1>
-    <p class="text-center w-1/2 mt-8">
+    <p class="text-center w-3/4 md:w-1/2 mt-8">
       I’m all about building meaningful tech projects, teaching what I learn,
       and connecting people through creativity. dCurrently crafting innovative
       solutions at the intersection of engineering, community, and education.
@@ -43,5 +45,19 @@ import { ReactComponent as Youtube } from "@assets/icons/youtube.svg";
         >
       </li>
     </ul>
+  </div>
+  <div class="flex flex-col md:grid md:grid-cols-2">
+    <div class="w-full grayscale hover:grayscale-0 aspect-square">
+      <Image
+        src=""
+        alt=""
+        class="object-cover h-full"
+        inferSize
+        loading="lazy"
+      />
+    </div>
+    <div class="p-24">
+      <h2 class="font-mono text-blue text-5xl">COMMUNITY LEADER</h2>
+    </div>
   </div>
 </MainLayout>
