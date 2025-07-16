@@ -7,6 +7,7 @@ import { ReactComponent as People } from "@assets/icons/people.svg";
 import { ReactComponent as GlobeLatam } from "@assets/icons/globe-latam.svg";
 import { ReactComponent as GraduationCap } from "@assets/icons/graduation-cap.svg";
 import Comment from "../components/comment/index.astro";
+import FeaturedWall from "../components/featured-wall/index.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
@@ -50,15 +51,14 @@ import MainLayout from "../layouts/MainLayout.astro";
       </li>
     </ul>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-2 h-min">
+  <div class="grid grid-cols-1 md:grid-cols-2 h-min bg-white/40">
     <div
       class="grayscale hover:grayscale-0 relative overflow-hidden w-full min-h-96"
     >
-      <Image
-        src="/comunity-lead.jpg"
+      <img
+        src="/img/community-lead.jpg"
         alt="Picture of Luis Bazan"
         class="h-full absolute w-full object-cover"
-        inferSize
         loading="lazy"
       />
     </div>
@@ -109,24 +109,43 @@ import MainLayout from "../layouts/MainLayout.astro";
         authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
         content="I was extremely impressed by Luis's ability to organize, build, and facilitate developer communities. She has an exceptional talent and positive approach. I wouldn't hesitate to recommend Luis to any team looking to grow the reputation and community of their developer focused product."
       />
-      <Comment
-        authorName="Junior F."
-        authorPosition="IA Engineer"
-        authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
-        content="A dynamic and sincere community builder, Luis brings a high level of passion and energy to her work that not only captivates success but a deeper mission that serves many. It's both a joy and an inspiration to work with Luis!"
-      />
-      <Comment
-        authorName="Mr Aaron"
-        authorPosition="Cloud Architecture"
-        authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
-        content="Luis is a delight and creative force. I've worked with her before for DevRel/OSS community building and I admire her commitment to serving her community with consistent and educational tech content."
-      />
-      <Comment
-        authorName="Mr J. Delgado"
-        authorPosition="Developer"
-        authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
-        content="I've seen Luis set the bar for everyone else. She built and nurtured the community, managed a team, organized and ran conferences in record time, created quality screencasts, gave talks, wrote articles, held meetups, and put us on the map. I often wondered if we had the same 24 hours in a day."
-      />
     </div>
+  </div>
+  <div class="flex flex-col items-center py-24 gap-8 text-blue">
+    <h3 class="font-mono text-4xl md:text-5xl">FEATURED IN</h3>
+    <FeaturedWall
+      images={[
+        "/img/logos/utp.svg",
+        "/img/logos/mto.png",
+        "/img/logos/colegio-san-fernando.png",
+      ]}
+    />
+  </div>
+  <div class="flex flex-col p-24 py-40 items-center text-blue gap-8">
+    <h3 class="font-mono text-4xl md:text-5xl">WORK WITH ME</h3>
+    <p class="">Let's build the future 🚀</p>
+    <ul class="flex flex-col md:flex-row gap-8 md:gap-4">
+      <li>
+        <a
+          href="mailto:me@luisb.space"
+          class="py-3 px-6 rounded-full bg-gray hover:bg-rose transition-colors hover:text-gray"
+          >Send me an email</a
+        >
+      </li>
+      <li>
+        <a
+          href="/work"
+          class="py-3 px-6 rounded-full bg-gray hover:bg-rose transition-colors hover:text-gray"
+          >View my projects</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="bg-blue flex w-full text-gray flex-col items-center py-8 gap-4">
+    <a href="https://github.com/luisbazandev" class="hover:text-rose">
+      <Github class="inline w-6 mr-2" />
+      <span>Check my open source code</span>
+    </a>
+    <p>© 2025 Luis Bazan. All rights reserved.</p>
   </div>
 </MainLayout>
