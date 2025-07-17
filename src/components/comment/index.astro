@@ -16,14 +16,18 @@ const { authorName, authorPosition, authorImage, content }: Props = Astro.props;
   >
   <p class="text-pretty text-lg max-w-96 italic">{content}</p>
   <div class="flex items-center mt-8 gap-4">
-    <div>
-      <Image
-        src={authorImage}
-        alt={`Image of ${authorName}`}
-        class="rounded-full w-12 h-12"
-        inferSize
-      />
-    </div>
+    {
+      authorImage && (
+        <div>
+          <Image
+            src={authorImage}
+            alt={`Image of ${authorName}`}
+            class="rounded-full w-12 h-12"
+            inferSize
+          />
+        </div>
+      )
+    }
     <div class="flex flex-col">
       <span>{authorName}</span>
       <span class="opacity-80">{authorPosition}</span>

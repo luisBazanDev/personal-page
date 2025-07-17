@@ -1,14 +1,14 @@
 ---
-import { Image } from "astro:assets";
 import { ReactComponent as Github } from "@assets/icons/github.svg";
 import { ReactComponent as Linkedin } from "@assets/icons/linkedin.svg";
 import { ReactComponent as Youtube } from "@assets/icons/youtube.svg";
 import { ReactComponent as People } from "@assets/icons/people.svg";
 import { ReactComponent as GlobeLatam } from "@assets/icons/globe-latam.svg";
 import { ReactComponent as GraduationCap } from "@assets/icons/graduation-cap.svg";
+import MainLayout from "../layouts/MainLayout.astro";
 import Comment from "../components/comment/index.astro";
 import FeaturedWall from "../components/featured-wall/index.astro";
-import MainLayout from "../layouts/MainLayout.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <MainLayout>
@@ -104,10 +104,10 @@ import MainLayout from "../layouts/MainLayout.astro";
       class="grid grid-cols-1 md:grid-cols-2 px-4 w-full md:w-3/4 lg:w-3/5 gap-16"
     >
       <Comment
-        authorName="Junior D."
-        authorPosition="Software Engineer"
-        authorImage="https://cdn.mtocommunity.com/staff-junior-delgado-flores.jpg"
-        content="I was extremely impressed by Luis's ability to organize, build, and facilitate developer communities. She has an exceptional talent and positive approach. I wouldn't hesitate to recommend Luis to any team looking to grow the reputation and community of their developer focused product."
+        authorName="Fernando Diaz"
+        authorPosition="IT Specialist & Educator"
+        authorImage=""
+        content="Luis is a responsible, diligent, and proactive person who can work with multidisciplinary teams and lead them towards common goals. He possesses outstanding technical IT skills and is always looking to learn new technologies that motivate him to solve real-world problems. He is friendly with everyone and is always willing to grow professionally."
       />
     </div>
   </div>
@@ -141,11 +141,5 @@ import MainLayout from "../layouts/MainLayout.astro";
       </li>
     </ul>
   </div>
-  <div class="bg-blue flex w-full text-gray flex-col items-center py-8 gap-4">
-    <a href="https://github.com/luisbazandev" class="hover:text-rose">
-      <Github class="inline w-6 mr-2" />
-      <span>Check my open source code</span>
-    </a>
-    <p>© 2025 Luis Bazan. All rights reserved.</p>
-  </div>
+  <Footer />
 </MainLayout>
