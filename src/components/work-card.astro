@@ -1,0 +1,39 @@
+---
+import { type CollectionEntry } from "astro:content";
+import { ReactComponent as ArrowRight } from "@assets/icons/arrow-right.svg";
+
+type Props = {
+  work: CollectionEntry<"work">;
+};
+
+const { work }: Props = Astro.props;
+---
+
+<div
+  class="work-card border-light_blue border-[1px] rounded-lg p-4 text-blue flex flex-col relative"
+  id={work.id}
+  data-tags={work.data.tags.join(" ")}
+>
+  <div class="overflow-hidden rounded-t-lg aspect-w-4 aspect-h-3">
+    <img
+      src={work.data.image}
+      alt={work.data.name}
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+  </div>
+  <div class="flex flex-col">
+    <h3 class="font-mono text-2xl">{work.data.name}</h3>
+    <span class="text-xs font-light">{work.data.date}</span>
+  </div>
+  <p class="text-pretty mt-7 mb-11">{work.data.description}</p>
+  <a
+    href={`/work/${work.id.replace(".md", "")}`}
+    class="flex items-center text-amethyst text-nowrap mt-6 group hover:text-blue/50 transition-all duration-300 bottom-4 absolute select-none"
+  >
+    View more
+    <ArrowRight
+      className="ml-2 h-5 w-5 group-hover:ml-3 transition-all duration-300"
+    />
+  </a>
+</div>
