@@ -1,0 +1,7 @@
+.select-filter {
+  @apply text-blue rounded-full cursor-pointer px-4 py-1 select-none flex items-center gap-1 text-nowrap;
+}
+
+.select-active {
+  @apply text-white bg-blue;
+}
