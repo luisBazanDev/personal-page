@@ -49,5 +49,26 @@ import "./_style.css";
     <div class="text-lg text-blue text-pretty markdown">
       <Content />
     </div>
+    <div class="flex flex-col lg:flex-row flex-wrap gap-8">
+      {
+        work.data.links.map((link) =>
+          link.style === "primary" ? (
+            <a
+              href={link.url}
+              class="bg-gray text-blue/80 px-4 py-2 rounded-full hover:text-white hover:bg-amethyst hover:border-amethyst transition-colors duration-300 flex justify-center"
+            >
+              {link.name}
+            </a>
+          ) : (
+            <a
+              href={link.url}
+              class="text-blue border-blue border rounded-full px-4 py-2 hover:text-white hover:bg-amethyst hover:border-amethyst transition-colors duration-300 flex justify-center"
+            >
+              {link.name}
+            </a>
+          )
+        )
+      }
+    </div>
   </div>
 </MainLayout>
