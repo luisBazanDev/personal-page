@@ -5,3 +5,19 @@
 .select-active {
   @apply text-white bg-blue;
 }
+
+.markdown {
+  @apply flex flex-col gap-4;
+}
+
+.markdown ul {
+  @apply flex flex-col gap-2;
+}
+
+.markdown li {
+  @apply list-disc ml-8;
+}
+
+.markdown a {
+  @apply text-amethyst hover:underline;
+}

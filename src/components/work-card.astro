@@ -14,7 +14,7 @@ const { work }: Props = Astro.props;
   id={work.id}
   data-tags={work.data.tags.join(" ")}
 >
-  <div class="overflow-hidden rounded-t-lg aspect-w-4 aspect-h-3">
+  <div class="overflow-hidden rounded-t-lg aspect-w-2 aspect-h-1">
     <img
       src={work.data.image}
       alt={work.data.name}
@@ -28,7 +28,7 @@ const { work }: Props = Astro.props;
   </div>
   <p class="text-pretty mt-7 mb-11">{work.data.description}</p>
   <a
-    href={`/work/${work.id.replace(".md", "")}`}
+    href={`/work/${work.id.replace(".mdx", "")}`}
     class="flex items-center text-amethyst text-nowrap mt-6 group hover:text-blue/50 transition-all duration-300 bottom-4 absolute select-none"
   >
     View more
