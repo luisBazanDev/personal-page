@@ -42,7 +42,11 @@ import "./_style.css";
       Back
     </a>
     <div class="rounded-lg aspect-w-2 aspect-h-1 overflow-hidden">
-      <img src={work.data.image} alt={work.data.name} />
+      <img
+        src={work.data.image}
+        alt={work.data.name}
+        class="w-full h-full object-cover"
+      />
     </div>
     <h1 class="font-mono text-3xl lg:text-4xl">{work.data.name}</h1>
     <span class="text-blue">{work.data.date}</span>
