@@ -1,8 +1,6 @@
 ---
-import { ReactComponent as Github } from "@assets/icons/github.svg";
-import { ReactComponent as Linkedin } from "@assets/icons/linkedin.svg";
 import { ReactComponent as OpenSource } from "@assets/icons/opensource.svg";
-import { ReactComponent as Microphone } from "@assets/icons/microphone.svg";
+import { ReactComponent as People } from "@assets/icons/people.svg";
 import { ReactComponent as Briefcase } from "@assets/icons/briefcase.svg";
 import { ReactComponent as Cube } from "@assets/icons/cube.svg";
 import MainLayout from "../../layouts/MainLayout.astro";
@@ -47,9 +45,13 @@ const works = await getCollection("work");
         <Briefcase className="w-5 h-5 md:w-4 md:h-4" />
         Projects
       </li>
-      <li onclick="filter('PODCAST')" id="select-PODCAST" class="select-filter">
-        <Microphone className="w-5 h-5 md:w-4 md:h-4" />
-        Podcast
+      <li
+        onclick="filter('COMMUNITY')"
+        id="select-COMMUNITY"
+        class="select-filter"
+      >
+        <People className="w-5 h-5 md:w-4 md:h-4" />
+        Community
       </li>
       <li
         onclick="filter('OPENSOURCE')"
