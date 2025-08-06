@@ -1,14 +1,25 @@
 ---
-import { ReactComponent as OpenSource } from "@assets/icons/opensource.svg";
-import { ReactComponent as People } from "@assets/icons/people.svg";
-import { ReactComponent as Briefcase } from "@assets/icons/briefcase.svg";
-import { ReactComponent as Cube } from "@assets/icons/cube.svg";
 import MainLayout from "../layouts/MainLayout.astro";
+import Comment from "../components/comment/index.astro";
 import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
-import WorkCard from "../components/work-card.astro";
 
-const comments = await getCollection("comments");
+const mainCommentsIds = ["fernando-diaz", "jorge-contreras"];
+const rawComments = await getCollection("comments");
+
+const comments = rawComments
+  .filter((x) => !mainCommentsIds.includes(x.id))
+  .map((x) => x.data)
+  .sort((a, b) => b.comment.length - a.comment.length);
+
+const mainComments = await Promise.all(
+  mainCommentsIds
+    .map(async (id) => {
+      const comment = rawComments.find((c) => c.id === id);
+      return comment ? { ...comment.data } : null;
+    })
+    .filter(Boolean)
+);
 ---
 
 <MainLayout>
@@ -16,7 +27,9 @@ const comments = await getCollection("comments");
   <div
     class="bg-blue w-full text-gray flex flex-col items-center pt-24 pb-16 lg:pt-36 lg:pb-24"
   >
-    <h1 class="font-mono text-4xl md:text-7xl flex group gap-4 px-16">
+    <h1
+      class="font-mono text-4xl md:text-7xl flex group gap-4 px-16 text-nowrap"
+    >
       WALL OF COMMENTS
     </h1>
     <p class="text-center w-3/4 md:w-1/2 mt-8">
@@ -25,24 +38,36 @@ const comments = await getCollection("comments");
     </p>
   </div>
   <div
-    class="grid mx-auto px-4 md:w-3/4 lg:w-2/3 2xl:w-1/2 mb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-    id="container"
+    class="grid grid-cols-1 md:grid-cols-2 p-12 md:p-28 w-full md:w-3/4 lg:w-3/5 gap-16"
   >
-    {comments.map((x) => <div />)}
+    {
+      mainComments.map((comment) => (
+        <Comment
+          authorName={comment.name}
+          authorPosition={comment.role}
+          authorImage={comment.image}
+          content={comment.comment}
+        />
+      ))
+    }
+  </div>
+
+  <div
+    class="grid mx-auto px-4 md:w-3/4 lg:w-2/3 2xl:w-1/2 mb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+  >
+    {
+      mainComments.map((x) => (
+        <div
+          class={`animate-on-scroll ${x.comment.length <= 200 ? "col-span-1" : "col-span-3"}`}
+        >
+          <p>{x.comment}</p>
+          <span>{x.name}</span>
+        </div>
+      ))
+    }
   </div>
   <Footer />
   <script>
-    document.querySelectorAll(".card").forEach((card) => {
-      card.addEventListener("click", () => {
-        document.querySelectorAll(".card").forEach((c) => {
-          c.classList.remove("card-active");
-          c.classList.add("card-inactive");
-        });
-        card.classList.remove("card-inactive");
-        card.classList.add("card-active");
-      });
-    });
-
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
