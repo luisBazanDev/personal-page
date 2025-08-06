@@ -1,6 +1,7 @@
 ---
 const isActive = (path) => {
-  return Astro.url.pathname === path ? "active" : "";
+  if (path === "/") return Astro.url.pathname === "/" ? "active" : "";
+  return Astro.url.pathname.includes(path) ? "active" : "";
 };
 import "./style.css";
 ---
@@ -24,9 +25,7 @@ import "./style.css";
       >
     </li>
     <li>
-      <a href="/blog" target="_blank" class={isActive("/wall-of-comments")}
-        >Blog</a
-      >
+      <a href="/blog" target="_blank" class={isActive("/blog")}>Blog</a>
     </li>
   </ul>
 </nav>

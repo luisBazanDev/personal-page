@@ -1,0 +1,58 @@
+---
+import { ReactComponent as OpenSource } from "@assets/icons/opensource.svg";
+import { ReactComponent as People } from "@assets/icons/people.svg";
+import { ReactComponent as Briefcase } from "@assets/icons/briefcase.svg";
+import { ReactComponent as Cube } from "@assets/icons/cube.svg";
+import MainLayout from "../layouts/MainLayout.astro";
+import Footer from "../components/Footer.astro";
+import { getCollection } from "astro:content";
+import WorkCard from "../components/work-card.astro";
+
+const comments = await getCollection("comments");
+---
+
+<MainLayout>
+  <!-- Header -->
+  <div
+    class="bg-blue w-full text-gray flex flex-col items-center pt-24 pb-16 lg:pt-36 lg:pb-24"
+  >
+    <h1 class="font-mono text-4xl md:text-7xl flex group gap-4 px-16">
+      WALL OF COMMENTS
+    </h1>
+    <p class="text-center w-3/4 md:w-1/2 mt-8">
+      Hear it from others, a collection of testimonials from people I've worked
+      with and collaborated with.
+    </p>
+  </div>
+  <div
+    class="grid mx-auto px-4 md:w-3/4 lg:w-2/3 2xl:w-1/2 mb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    id="container"
+  >
+    {comments.map((x) => <div />)}
+  </div>
+  <Footer />
+  <script>
+    document.querySelectorAll(".card").forEach((card) => {
+      card.addEventListener("click", () => {
+        document.querySelectorAll(".card").forEach((c) => {
+          c.classList.remove("card-active");
+          c.classList.add("card-inactive");
+        });
+        card.classList.remove("card-inactive");
+        card.classList.add("card-active");
+      });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+</MainLayout>
