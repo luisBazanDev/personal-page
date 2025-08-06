@@ -1,0 +1,84 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Comment from "../../components/comment/index.astro";
+import Footer from "../../components/Footer.astro";
+import "./_style.css";
+
+const mainCommentsIds = ["fernando-diaz", "jorge-contreras"];
+const rawComments = await getCollection("comments");
+
+const comments = rawComments
+  .filter((x) => !mainCommentsIds.includes(x.id))
+  .map((x) => x.data);
+// .sort((a, b) => b.comment.length - a.comment.length);
+
+const mainComments = await Promise.all(
+  mainCommentsIds
+    .map(async (id) => {
+      const comment = rawComments.find((c) => c.id === id);
+      return comment ? { ...comment.data } : null;
+    })
+    .filter(Boolean)
+);
+---
+
+<MainLayout>
+  <!-- Header -->
+  <div
+    class="bg-blue w-full text-gray flex flex-col items-center pt-24 pb-16 lg:pt-36 lg:pb-24"
+  >
+    <h1
+      class="font-mono text-4xl md:text-7xl flex group gap-4 px-16 text-nowrap"
+    >
+      WALL OF COMMENTS
+    </h1>
+    <p class="text-center w-3/4 md:w-1/2 mt-8">
+      Hear it from others, a collection of testimonials from people I've worked
+      with and collaborated with.
+    </p>
+  </div>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 px-4 md:py-28 mx-auto md:w-3/4 lg:w-2/3 2xl:w-1/2 gap-16"
+  >
+    {
+      mainComments.map((comment) => (
+        <Comment
+          authorName={comment.name}
+          authorPosition={comment.role}
+          authorImage={comment.image}
+          content={comment.comment}
+        />
+      ))
+    }
+  </div>
+
+  <div
+    class="grid mx-auto px-4 md:w-3/4 lg:w-2/3 2xl:w-1/2 mb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+  >
+    {
+      comments.map((x) => (
+        <div
+          class={`animate-on-scroll ${x.comment.length <= 600 ? "col-span-1" : "col-span-3"} bg-blue/5 p-4 hover:bg-blue/10 text-blue flex flex-col gap-2 rounded-lg border border-blue/5 spawn-bottom h-min`}
+        >
+          <p>{x.comment}</p>
+          <span class="font-bold">{x.name}</span>
+        </div>
+      ))
+    }
+  </div>
+  <Footer />
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    });
+
+    document.querySelectorAll(".animate-on-scroll").forEach((el) => {
+      observer.observe(el);
+    });
+  </script>
+</MainLayout>

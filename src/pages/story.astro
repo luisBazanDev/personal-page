@@ -1,0 +1,198 @@
+---
+import { ReactComponent as Github } from "@assets/icons/github.svg";
+import { ReactComponent as Linkedin } from "@assets/icons/linkedin.svg";
+import { ReactComponent as Youtube } from "@assets/icons/youtube.svg";
+import { ReactComponent as People } from "@assets/icons/people.svg";
+import { ReactComponent as GlobeLatam } from "@assets/icons/globe-latam.svg";
+import { ReactComponent as GraduationCap } from "@assets/icons/graduation-cap.svg";
+import MainLayout from "../layouts/MainLayout.astro";
+import Footer from "../components/Footer.astro";
+import StoryPeriod from "../components/story-period.astro";
+---
+
+<MainLayout>
+  <!-- Header -->
+  <div
+    class="bg-blue w-full text-gray flex flex-col items-center pt-24 pb-16 lg:pt-36 lg:pb-24"
+  >
+    <h1 class="font-mono text-4xl md:text-7xl flex group gap-4 px-16">STORY</h1>
+  </div>
+  <div class="w-full text-blue flex justify-center my-8">
+    <ul class="flex items-center gap-2 flex-wrap px-8 justify-center text-sm">
+      <li>
+        <a
+          href="#period-2015"
+          class="flex px-2 py-1 bg-light_blue rounded-full hover:bg-rose hover:text-gray"
+          >2015</a
+        >
+      </li>
+      <li>
+        <a
+          href="#period-2016"
+          class="flex px-2 py-1 bg-light_blue rounded-full hover:bg-rose hover:text-gray"
+          >2016</a
+        >
+      </li>
+      <li>
+        <a
+          href="#period-2017"
+          class="flex px-2 py-1 bg-light_blue rounded-full hover:bg-rose hover:text-gray"
+          >2017</a
+        >
+      </li>
+      <li>
+        <a
+          href="#period-2019"
+          class="flex px-2 py-1 bg-light_blue rounded-full hover:bg-rose hover:text-gray"
+          >2019</a
+        >
+      </li>
+      <li>
+        <a
+          href="#period-Today"
+          class="flex px-2 py-1 bg-light_blue rounded-full hover:bg-rose hover:text-gray"
+          >Today</a
+        >
+      </li>
+    </ul>
+  </div>
+  <div class="flex flex-col mx-auto px-4 md:w-3/4 lg:w-1/2 2xl:w-1/3 mb-24">
+    <!-- 2015 Minecraft and Robotics -->
+    <StoryPeriod
+      title="How it all started"
+      year="2015"
+      imageUrl="/img/story/2015-photo.jpg"
+    >
+      <p class="mb-4">
+        My parents always used to sign me up for summer courses. All kinds of
+        them, just to help me explore the world. The typical “productive
+        vacation” kind of program.
+      </p>
+      <p class="mb-4">
+        One of those led me to a LEGO robotics class. That's when I discovered
+        the world of programming machines. The idea of making an object do
+        exactly what you wanted felt like magic. Time flew in those classes, and
+        I always stayed until the very end, almost until they kicked me out
+        because the next group had to come in.
+      </p>
+      <p class="">
+        At the same time, I had discovered Minecraft. I wasn't doing anything
+        special just building houses, fighting enemies, the usual stuff any 10
+        years old would do. I had no idea that little blocky game would end up
+        shaping my future.
+      </p>
+    </StoryPeriod>
+    <!-- 2016 My first Arduino and Android studio -->
+    <StoryPeriod
+      title="A random gift"
+      year="2016"
+      imageUrl="/img/story/2016-photo.jpg"
+    >
+      <p class="mb-4">
+        They gave me a tablet nothing fancy, but for me, it was a brand new toy.
+        I spent every day trying to get something new out of it. I kept
+        downloading apps, most of which were completely unnecessary, but I was
+        happy with my flashlight app that made me watch an ad just to turn on
+        the light.
+      </p>
+      <p class="mb-4">
+        So I decided to make an app myself. I discovered a lot along the way,
+        like the fact that my tablet had something called an "operating system"
+        named Android. In my mind, I just thought it was “Huawei brand.” Anyway,
+        I downloaded something called Android Studio, and with YouTube
+        tutorials, I managed to install an app on my tablet that just showed
+        some text on the screen. But again, I was happy, and I even posted about
+        it on Facebook.
+      </p>
+      <p class="">
+        I'm not sure if it was because of that post or just good timing, but my
+        cousin gave me an Arduino he wasn't using anymore. He thought it would
+        be a good idea for me to learn from it, and he also introduced me to a
+        YouTube channel called <a
+          href="https://www.youtube.com/@codigofacilito"
+          target="_blank"
+          class="underline text-blue hover:bg-blue hover:text-light_blue transition-colors"
+          >Código Facilito</a
+        >. Looking back, that was a turning point in my life. I started watching
+        all their videos and managed to turn on my first LED :D which, for
+        11-year-old me, felt like being Iron Man.
+      </p>
+    </StoryPeriod>
+    <!-- 2017 Club Imagina - Inventa - Intenta (Science Community on Lambayeque) and Minecraft Server "PeruCraft" -->
+    <StoryPeriod
+      title="The science community and software"
+      year="2017"
+      imageUrl="/img/story/2017-photo.jpg"
+    >
+      <p class="mb-4">
+        One of those afternoons after school, when I'd spend hours on the
+        computer playing Minecraft and watching YouTube, I came across a couple
+        of science communication channels: <a
+          href="https://www.youtube.com/@CdeCiencia"
+          target="_blank"
+          class="underline text-blue hover:bg-blue hover:text-light_blue transition-colors"
+          >CdeCiencia</a
+        > and <a
+          href="https://www.youtube.com/@QuantumFracture"
+          target="_blank"
+          class="underline text-blue hover:bg-blue hover:text-light_blue transition-colors"
+          >QuantumFracture</a
+        >. What caught my attention was how they said that anyone could
+        contribute to science, and that even they were still students at the
+        time.
+      </p>
+      <p class="mb-4">
+        Since I had been learning how to edit photos and use tools like
+        Photoshop, Facebook pages, and social media in general, I decided to
+        create a Facebook page to share science with my local community. I made
+        a few posts, but one day at school someone made fun of my page because,
+        at that time, I was considered a “niño rata” a term used to mock kids
+        who played Minecraft. I felt really bad and ended up deleting the page
+        completely.
+      </p>
+      <p class="mb-4">
+        Even so, I didn't give up. Instead, I decided to create an alter ego so
+        I could publish online without fear of the consequences—like bullying. I
+        teamed up with a friend from school to create a public Minecraft server.
+        He would handle the promotion through his YouTube channel, and I would
+        build the server. That deal led me to spend countless hours on YouTube,
+        learning terms I'd never heard before: client-server architecture,
+        hosting, websites, Java, HTML, cloud, plugins, and more.
+      </p>
+      <p class="">
+        Looking back, that's when I decided I wanted to build things-experiences
+        for others to enjoy, learning along the way, and surrounding myself with
+        people who help me grow.
+      </p>
+    </StoryPeriod>
+    <!-- 2019 Arduino classes with university students -->
+    <StoryPeriod
+      title="The Unique Non-University"
+      year="2019"
+      imageUrl="/img/story/2019-photo.jpg"
+    >
+      <p class="mb-4">
+        On this point, I had already decided I wanted to study something related
+        to programming, but I had never actually taken a real programming class.
+        Almost everything I knew came from YouTube tutorials. That's when my dad
+        told me one of his friends ran an Arduino and tech center but it was
+        meant for university students. Still, we went to check it out.
+      </p>
+      <p class="mb-4">
+        His friend interviewed me, and after I answered a few questions, he gave
+        me the chance to join the classes with the condition that if I couldn't
+        keep up, I'd have to leave.
+      </p>
+      <p class="">
+        It didn't really bother me, because I already knew one of the students
+        there. A few years earlier, he had been a supervisor at my school and
+        had seen me talk about topics most kids my age didn't usually mention.
+        So he helped me join the group, and not long after, I started feeling
+        comfortable even solving problems others couldn't. I guess the
+        creativity of a younger mind makes a difference.
+      </p>
+    </StoryPeriod>
+    <!-- 2021 Minecraft servers developer -->
+  </div>
+  <Footer />
+</MainLayout>

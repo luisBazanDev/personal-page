@@ -1,0 +1,8 @@
+export enum WorkTags {
+  COMMUNITY,
+  PROJECT,
+  ARTICLE,
+  FEATURE,
+  MINECRAFT,
+  OPENSOURCE,
+}
