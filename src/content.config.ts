@@ -27,4 +27,14 @@ const work = defineCollection({
   }),
 });
 
-export const collections = { work };
+const comments = defineCollection({
+  type: "data",
+  schema: z.object({
+    name: z.string(),
+    role: z.string().optional(),
+    comment: z.string(),
+    image: z.string().optional(),
+  }),
+});
+
+export const collections = { work, comments };
