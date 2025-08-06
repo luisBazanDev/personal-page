@@ -1,0 +1,23 @@
+.select-filter {
+  @apply text-blue rounded-full cursor-pointer px-4 py-1 select-none flex items-center gap-1 text-nowrap;
+}
+
+.select-active {
+  @apply text-white bg-blue;
+}
+
+.markdown {
+  @apply flex flex-col gap-4;
+}
+
+.markdown ul {
+  @apply flex flex-col gap-2;
+}
+
+.markdown li {
+  @apply list-disc ml-8;
+}
+
+.markdown a {
+  @apply text-amethyst hover:underline;
+}

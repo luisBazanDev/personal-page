@@ -1,0 +1,78 @@
+---
+import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import { ReactComponent as ArrowLeft } from "@assets/icons/arrow-left.svg";
+
+export async function getStaticPaths() {
+  const workCollection = await getCollection("work");
+  return workCollection.map((work) => ({
+    params: { slug: work.id.replace(".mdx", "") },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+
+const { Content } = await work.render();
+import "./_style.css";
+---
+
+<MainLayout>
+  <!-- Header -->
+  <div
+    class="bg-blue w-full text-gray flex flex-col items-center pt-24 pb-16 lg:pt-36 lg:pb-24"
+  >
+    <h1 class="font-mono text-4xl md:text-7xl flex group gap-4 px-16">WORK</h1>
+    <p class="text-center w-3/4 md:w-1/2 mt-8">
+      I’m all about building meaningful tech projects, teaching what I learn,
+      and connecting people through creativity. dCurrently crafting innovative
+      solutions at the intersection of engineering, community, and education.
+    </p>
+  </div>
+  <div
+    class="flex flex-col mx-auto px-8 md:w-3/4 lg:w-2/3 2xl:w-1/2 mb-24 mt-16 gap-8"
+  >
+    <a
+      href="/work"
+      class="flex items-center text-amethyst text-nowrap group hover:text-blue/50 transition-all duration-300 bottom-4 select-none"
+    >
+      <ArrowLeft
+        className="h-5 w-5 group-hover:-left-2 left-0 mr-1 transition-all duration-300 relative"
+      />
+      Back
+    </a>
+    <div class="rounded-lg aspect-w-2 aspect-h-1 overflow-hidden">
+      <img
+        src={work.data.image}
+        alt={work.data.name}
+        class="w-full h-full object-cover"
+      />
+    </div>
+    <h1 class="font-mono text-3xl lg:text-4xl">{work.data.name}</h1>
+    <span class="text-blue">{work.data.date}</span>
+    <div class="text-lg text-blue text-pretty markdown">
+      <Content />
+    </div>
+    <div class="flex flex-col lg:flex-row flex-wrap gap-8">
+      {
+        work.data.links.map((link) =>
+          link.style === "primary" ? (
+            <a
+              href={link.url}
+              class="bg-gray text-blue/80 px-4 py-2 rounded-full hover:text-white hover:bg-amethyst hover:border-amethyst transition-colors duration-300 flex justify-center"
+            >
+              {link.name}
+            </a>
+          ) : (
+            <a
+              href={link.url}
+              class="text-blue border-blue border rounded-full px-4 py-2 hover:text-white hover:bg-amethyst hover:border-amethyst transition-colors duration-300 flex justify-center"
+            >
+              {link.name}
+            </a>
+          )
+        )
+      }
+    </div>
+  </div>
+</MainLayout>

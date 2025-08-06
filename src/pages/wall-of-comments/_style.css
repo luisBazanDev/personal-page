@@ -1,0 +1,11 @@
+.spawn-bottom {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.075, 0.82, 0.165, 1),
+    opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.spawn-bottom.visible {
+  transform: translateY(0);
+  opacity: 1;
+}

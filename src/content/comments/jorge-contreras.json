@@ -1,0 +1,7 @@
+{
+  "$schema": "../../../.astro/collections/comments.schema.json",
+  "name": "Jorge Contreras",
+  "role": "Frontend Developer",
+  "image": "https://avatars.githubusercontent.com/u/133790355?v=4",
+  "comment": "Luis is one of those people who leave a lasting impression. Faces may fade from memory, but brilliant and curious minds never do. He is consistently driven to learn anything that sparks his interest, which is why his technical skills are so advanced. His intellectual curiosity and continuous desire for growth make him an exceptional professional. If I had to choose someone intelligent to join a team, he would be my first choice."
+}

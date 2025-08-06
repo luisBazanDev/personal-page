@@ -1,0 +1,29 @@
+---
+type Props = {
+  images: string[];
+};
+
+const { images }: Props = Astro.props;
+let bgWhite = 0;
+---
+
+<div
+  class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-8 md:mx-24 lg:w-1/2"
+>
+  {
+    images.map((image) => {
+      if (bgWhite % 5 == 0) bgWhite++;
+      bgWhite++;
+      return (
+        <div
+          class={`${bgWhite % 2 == 0 ? "bg-white" : "bg-white/50"} aspect-1 px-2 md:px-4`}
+        >
+          <img
+            src={image}
+            class={`object-contain grayscale hover:grayscale-0 w-full h-full my-auto transition-all duration-500`}
+          />
+        </div>
+      );
+    })
+  }
+</div>

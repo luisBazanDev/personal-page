@@ -1,0 +1,134 @@
+---
+import { ReactComponent as OpenSource } from "@assets/icons/opensource.svg";
+import { ReactComponent as People } from "@assets/icons/people.svg";
+import { ReactComponent as Briefcase } from "@assets/icons/briefcase.svg";
+import { ReactComponent as Cube } from "@assets/icons/cube.svg";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Footer from "../../components/Footer.astro";
+import { getCollection } from "astro:content";
+import WorkCard from "../../components/work-card.astro";
+import "./_style.css";
+
+const works = await getCollection("work");
+---
+
+<MainLayout>
+  <!-- Header -->
+  <div
+    class="bg-blue w-full text-gray flex flex-col items-center pt-24 pb-16 lg:pt-36 lg:pb-24"
+  >
+    <h1 class="font-mono text-4xl md:text-7xl flex group gap-4 px-16">WORK</h1>
+    <p class="text-center w-3/4 md:w-1/2 mt-8">
+      A collection of my work in community, projects, open source, and minecraft
+    </p>
+  </div>
+  <div class="w-full text-blue flex lg:justify-center my-8 overflow-x-auto">
+    <ul class="flex items-center gap-4 flex-nowrap px-16 justify-center w-auto">
+      <li
+        onclick="filter('all')"
+        id="select-all"
+        class="select-filter select-active"
+      >
+        All
+      </li>
+      <li
+        onclick="filter('MINECRAFT')"
+        id="select-MINECRAFT"
+        class="select-filter"
+      >
+        <Cube className="w-5 h-5 md:w-4 md:h-4" />
+        Minecraft
+      </li>
+      <li onclick="filter('PROJECT')" id="select-PROJECT" class="select-filter">
+        <Briefcase className="w-5 h-5 md:w-4 md:h-4" />
+        Projects
+      </li>
+      <li
+        onclick="filter('COMMUNITY')"
+        id="select-COMMUNITY"
+        class="select-filter"
+      >
+        <People className="w-5 h-5 md:w-4 md:h-4" />
+        Community
+      </li>
+      <li
+        onclick="filter('OPENSOURCE')"
+        id="select-OPENSOURCE"
+        class="select-filter"
+      >
+        <OpenSource className="w-5 h-5 md:w-4 md:h-4" />
+        Open Source
+      </li>
+    </ul>
+  </div>
+  <div
+    class="grid mx-auto px-4 md:w-3/4 lg:w-2/3 2xl:w-1/2 mb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+    id="container"
+  >
+    {works.map((x) => <WorkCard work={x} />)}
+  </div>
+  <Footer />
+  <script type="text/javascript">
+    const works = document.querySelectorAll(".work-card");
+
+    function selectFilter(tag) {
+      const allFilters = document.querySelectorAll(".select-filter");
+      allFilters.forEach((filter) => {
+        filter.classList.remove("select-active");
+      });
+      const selectedFilter = document.getElementById(`select-${tag}`);
+      if (selectedFilter) {
+        selectedFilter.classList.add("select-active");
+      }
+    }
+
+    function filter(tag) {
+      if (works.length === 0) return;
+
+      selectFilter(tag);
+
+      const hidden = [];
+      const shown = [];
+
+      works.forEach((work) => {
+        if (tag === "all" || work.getAttribute("data-tags").includes(tag)) {
+          shown.push(work);
+        } else {
+          hidden.push(work);
+        }
+      });
+
+      works.forEach((work) => {
+        work.animate(
+          [
+            { opacity: 1, transform: "translateY(0)" },
+            { opacity: 0, transform: "translateY(-20px)" },
+          ],
+          {
+            duration: 400,
+          }
+        );
+      });
+
+      setTimeout(() => {
+        hidden.forEach((work) => {
+          work.classList.add("hidden");
+        });
+        shown.forEach((work) => {
+          work.classList.remove("hidden");
+        });
+        shown.forEach((work) => {
+          work.animate(
+            [
+              { opacity: 0, transform: "translateY(20px)" },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            {
+              duration: 400,
+            }
+          );
+        });
+      }, 400);
+    }
+  </script>
+</MainLayout>
