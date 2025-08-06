@@ -1,16 +1,17 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
-import Comment from "../components/comment/index.astro";
-import Footer from "../components/Footer.astro";
 import { getCollection } from "astro:content";
+import MainLayout from "../../layouts/MainLayout.astro";
+import Comment from "../../components/comment/index.astro";
+import Footer from "../../components/Footer.astro";
+import "./_style.css";
 
 const mainCommentsIds = ["fernando-diaz", "jorge-contreras"];
 const rawComments = await getCollection("comments");
 
 const comments = rawComments
   .filter((x) => !mainCommentsIds.includes(x.id))
-  .map((x) => x.data)
-  .sort((a, b) => b.comment.length - a.comment.length);
+  .map((x) => x.data);
+// .sort((a, b) => b.comment.length - a.comment.length);
 
 const mainComments = await Promise.all(
   mainCommentsIds
@@ -38,7 +39,7 @@ const mainComments = await Promise.all(
     </p>
   </div>
   <div
-    class="grid grid-cols-1 md:grid-cols-2 p-12 md:p-28 w-full md:w-3/4 lg:w-3/5 gap-16"
+    class="grid grid-cols-1 md:grid-cols-2 px-4 md:py-28 mx-auto md:w-3/4 lg:w-2/3 2xl:w-1/2 gap-16"
   >
     {
       mainComments.map((comment) => (
@@ -56,12 +57,12 @@ const mainComments = await Promise.all(
     class="grid mx-auto px-4 md:w-3/4 lg:w-2/3 2xl:w-1/2 mb-24 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
   >
     {
-      mainComments.map((x) => (
+      comments.map((x) => (
         <div
-          class={`animate-on-scroll ${x.comment.length <= 200 ? "col-span-1" : "col-span-3"}`}
+          class={`animate-on-scroll ${x.comment.length <= 600 ? "col-span-1" : "col-span-3"} bg-blue/5 p-4 hover:bg-blue/10 text-blue flex flex-col gap-2 rounded-lg border border-blue/5 spawn-bottom h-min`}
         >
           <p>{x.comment}</p>
-          <span>{x.name}</span>
+          <span class="font-bold">{x.name}</span>
         </div>
       ))
     }
