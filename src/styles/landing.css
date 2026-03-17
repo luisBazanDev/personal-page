@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;700&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer components {
   .project-container-line {
     @apply w-1/6 flex justify-start relative  lg:w-full;

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import MainLayout from "../../layouts/MainLayout.astro";
-import { PreactComponent as ArrowLeft } from "@assets/icons/arrow-left.svg";
+import ArrowLeft  from "@assets/icons/arrow-left.svg";
 
 export async function getStaticPaths() {
   const workCollection = await getCollection("work");

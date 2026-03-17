@@ -1,8 +1,8 @@
 ---
-import { PreactComponent as OpenSource } from "@assets/icons/opensource.svg";
-import { PreactComponent as People } from "@assets/icons/people.svg";
-import { PreactComponent as Briefcase } from "@assets/icons/briefcase.svg";
-import { PreactComponent as Cube } from "@assets/icons/cube.svg";
+import OpenSource from "@assets/icons/opensource.svg";
+import People from "@assets/icons/people.svg";
+import Briefcase from "@assets/icons/briefcase.svg";
+import Cube from "@assets/icons/cube.svg";
 import MainLayout from "../../layouts/MainLayout.astro";
 import Footer from "../../components/Footer.astro";
 import { getCollection } from "astro:content";
@@ -106,7 +106,7 @@ const works = await getCollection("work");
           ],
           {
             duration: 400,
-          }
+          },
         );
       });
 
@@ -125,7 +125,7 @@ const works = await getCollection("work");
             ],
             {
               duration: 400,
-            }
+            },
           );
         });
       }, 400);
