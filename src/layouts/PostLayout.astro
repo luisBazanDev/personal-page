@@ -3,6 +3,7 @@ import { resolveAuthor } from "../utils/authorUtils.js";
 import BlogLayout from "./Blog.astro";
 import LastPosts from "../components/posts/LastPosts.astro";
 import PostMeta from "../components/posts/PostMeta.astro";
+import "../styles/global.css";
 import "../styles/Posts.css";
 const { frontmatter } = Astro.props;
 const { description, author, keywords, title, thumbnail, date } = frontmatter;
