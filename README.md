@@ -1,1 +1,1 @@
-# Page [https://luisb.space](https://luisb.space)
+# Page [https://luisb.space](https://luisb.space/)
