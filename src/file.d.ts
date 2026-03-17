@@ -7,11 +7,11 @@ declare module "*.svg" {
   export default Component;
 
   // React/Preact
-  import * as React from "react";
+  import { FunctionComponent, ComponentProps } from "preact";
 
-  const ReactComponent: React.FunctionComponent<
-    React.ComponentProps<"svg"> & { title?: string }
+  const PreactComponent: FunctionComponent<
+    ComponentProps<"svg"> & { title?: string }
   >;
 
-  export { ReactComponent };
+  export { PreactComponent };
 }

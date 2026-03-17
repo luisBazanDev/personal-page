@@ -1,10 +1,10 @@
 ---
-import { ReactComponent as Github } from "@assets/icons/github.svg";
-import { ReactComponent as Linkedin } from "@assets/icons/linkedin.svg";
-import { ReactComponent as Youtube } from "@assets/icons/youtube.svg";
-import { ReactComponent as People } from "@assets/icons/people.svg";
-import { ReactComponent as GlobeLatam } from "@assets/icons/globe-latam.svg";
-import { ReactComponent as GraduationCap } from "@assets/icons/graduation-cap.svg";
+import Github from "@assets/icons/github.svg";
+import Linkedin from "@assets/icons/linkedin.svg";
+import Youtube from "@assets/icons/youtube.svg";
+import People from "@assets/icons/people.svg";
+import  GlobeLatam  from "@assets/icons/globe-latam.svg";
+import GraduationCap from "@assets/icons/graduation-cap.svg";
 import MainLayout from "../layouts/MainLayout.astro";
 import Comment from "../components/comment/index.astro";
 import FeaturedWall from "../components/featured-wall/index.astro";
@@ -112,8 +112,8 @@ const comments = (await getCollection("comments"))
         comments.map((comment) => (
           <Comment
             authorName={comment.name}
-            authorPosition={comment.role}
-            authorImage={comment.image}
+            authorPosition={comment.role as string}
+            authorImage={comment.image as string}
             content={comment.comment}
           />
         ))

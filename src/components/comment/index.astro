@@ -23,7 +23,8 @@ const { authorName, authorPosition, authorImage, content }: Props = Astro.props;
             src={authorImage}
             alt={`Image of ${authorName}`}
             class="rounded-full w-12 h-12"
-            inferSize
+            height={460}
+            width={460}
           />
         </div>
       )
