@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@reference "tailwindcss";
+@reference "./global.css";
+
 @layer components {
   .post-content p {
     @apply mt-3 mx-5 text-justify md:mx-0 lg:text-xl lg:mr-32;

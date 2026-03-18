@@ -21,7 +21,7 @@ const work = defineCollection({
       .array(
         z.object({
           name: z.string(),
-          url: z.url(),
+          url: z.string().url(),
           style: z.enum(["primary", "secondary"]).default("primary"),
         }),
       )

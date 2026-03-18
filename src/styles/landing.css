@@ -1,4 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@600;700&display=swap");
+@reference "tailwindcss";
+@reference "./global.css";
 
 @layer components {
   .project-container-line {

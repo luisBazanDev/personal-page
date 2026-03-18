@@ -1,6 +1,18 @@
 @import "tailwindcss";
 @import "./fonts.css";
 
+@source "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}";
+
+@theme {
+  --color-blue: #223257;
+  --color-light_blue: #c4d0e8;
+  --color-amethyst: #a2a9ff;
+  --color-rose: #f9bcb2;
+  --color-gray: #dde5f0;
+  --font-sans: "Karla", sans-serif;
+  --font-mono: "Koulen", monospace;
+}
+
 html {
   scroll-behavior: smooth;
 }
