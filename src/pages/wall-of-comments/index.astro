@@ -13,14 +13,14 @@ const comments = rawComments
   .map((x) => x.data);
 // .sort((a, b) => b.comment.length - a.comment.length);
 
-const mainComments = await Promise.all(
-  mainCommentsIds
-    .map(async (id) => {
+const mainComments = (
+  await Promise.all(
+    mainCommentsIds.map(async (id) => {
       const comment = rawComments.find((c) => c.id === id);
       return comment ? { ...comment.data } : null;
-    })
-    .filter(Boolean)
-);
+    }),
+  )
+).filter((c): c is NonNullable<typeof c> => c !== null);
 ---
 
 <MainLayout>
