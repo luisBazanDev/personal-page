@@ -1,9 +1,8 @@
 ---
-import { es } from "date-fns/locale/index.js";
+import { es } from "date-fns/locale";
 import { format } from "date-fns";
 import { resolveAuthor } from "../../utils/authorUtils.js";
-import _ from "lodash";
-const { capitalize } = _;
+import { capitalize } from "lodash-es";
 
 var author = resolveAuthor(Astro.props.author);
 const date: Date = Astro.props.date ?? new Date();
