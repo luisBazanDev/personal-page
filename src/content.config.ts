@@ -4,7 +4,7 @@ import { glob } from "astro/loaders";
 import { WorkTags } from "./types";
 
 const work = defineCollection({
-  loader: glob({ pattern: "*.{md,mdx}", base: "src/content/work" }),
+  type: "content",
   schema: z.object({
     date: z.string(),
     name: z.string(),

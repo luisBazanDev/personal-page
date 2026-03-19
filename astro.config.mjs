@@ -7,8 +7,7 @@ import tailwind from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig(async () => {
   return {
-    site: "https://luisbazandev.github.io",
-    integrations: [preact({ compat: true }), mdx()],
+    integrations: [mdx(), preact({ compat: true })],
     vite: {
       plugins: [svgr(), tailwind()],
       resolve: {

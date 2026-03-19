@@ -6,7 +6,7 @@ import ArrowLeft  from "@assets/icons/arrow-left.svg";
 export async function getStaticPaths() {
   const workCollection = await getCollection("work");
   return workCollection.map((work) => ({
-    params: { slug: work.id.replace(".mdx", "") },
+    params: { slug: work.id.replace(/\.mdx?$/, "") },
     props: { work },
   }));
 }
@@ -41,7 +41,7 @@ import "./_style.css";
       />
       Back
     </a>
-    <div class="rounded-lg aspect-w-2 aspect-h-1 overflow-hidden">
+    <div class="rounded-lg aspect-[2/1] overflow-hidden">
       <img
         src={work.data.image}
         alt={work.data.name}

@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+
 type Props = {
   year: string;
   title: string;
@@ -22,12 +24,13 @@ const { year, title, imageUrl } = Astro.props;
     <h3 class="font-mono text-3xl text-slate-950 -mt-1">{title}</h3>
     <div class="text-lg text-slate-950 mt-3 mb-4 text-pretty"><slot /></div>
     <div
-      class="w-full aspect-w-4 aspect-h-3 relative overflow-hidden rounded-lg"
+      class="w-full aspect-[4/3] relative overflow-hidden rounded-lg"
     >
       <img
         src={imageUrl}
         alt=""
         class="absolute w-full h-full object-cover hover:scale-105 transition-all duration-700 hover:grayscale-0 grayscale"
+      loading="lazy"
       />
     </div>
   </div>
