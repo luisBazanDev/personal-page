@@ -1,0 +1,259 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+---
+
+<MainLayout title="Calculadora de cachangas">
+  <main class="cachangas-page">
+    <section class="cachangas-hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Una unidad de medida muy peruana</p>
+        <h1>¿Cuántas cachangas<br /><span>cuesta eso?</span></h1>
+        <p class="intro">
+          Convierte cualquier monto a cachangas y descubre cuánto representa si
+          lo repartes durante una hora, un día, una semana o un mes.
+        </p>
+      </div>
+
+      <div class="hero-image-wrap">
+        <img
+          src="https://cdn-blog.joinnus.com/blog/wp-content/uploads/2019/08/23144512/Tradicional-Queso.jpg"
+          alt="Cachanga tradicional con queso"
+          class="hero-image"
+          loading="eager"
+        />
+        <span class="image-sticker">ñam ñam</span>
+      </div>
+    </section>
+
+    <section class="calculator" aria-labelledby="calculator-title">
+      <div class="calculator-heading">
+        <div>
+          <p class="section-kicker">La calculadora</p>
+          <h2 id="calculator-title">Elige tu cachanga</h2>
+        </div>
+        <p class="reference-note">Precios de referencia en soles</p>
+      </div>
+
+      <div class="calculator-grid">
+        <div class="controls-panel">
+          <fieldset class="price-options">
+            <legend class="sr-only">Tipo de cachanga</legend>
+            <button type="button" class="price-option is-selected" data-price="1" aria-pressed="true">
+              <span class="option-icon">◒</span>
+              <span class="option-copy">
+                <strong>Cachanga sola</strong>
+                <small>La clásica</small>
+              </span>
+              <span class="option-price">S/ 1</span>
+            </button>
+            <button type="button" class="price-option" data-price="3" aria-pressed="false">
+              <span class="option-icon">◒+</span>
+              <span class="option-copy">
+                <strong>Con champús</strong>
+                <small>El combo ganador</small>
+              </span>
+              <span class="option-price">S/ 3</span>
+            </button>
+            <button type="button" class="price-option" data-price="3" aria-pressed="false">
+              <span class="option-icon">◒★</span>
+              <span class="option-copy">
+                <strong>Con champús premium</strong>
+                <small>Para darse un gusto</small>
+              </span>
+              <span class="option-price">S/ 3</span>
+            </button>
+          </fieldset>
+
+          <label class="amount-label" for="amount">¿Cuánto cuesta?</label>
+          <div class="amount-input-wrap">
+            <span aria-hidden="true">S/</span>
+            <input id="amount" type="number" min="0" step="0.01" value="30" inputmode="decimal" />
+          </div>
+          <p class="input-hint">Puedes ingresar decimales, por ejemplo 12.50.</p>
+        </div>
+
+        <div class="result-panel" aria-live="polite">
+          <p class="result-label">Ese monto equivale a</p>
+          <div class="main-result">
+            <strong id="total-result">30</strong>
+            <span id="unit-result">cachangas</span>
+          </div>
+          <p class="result-caption" id="price-caption">a S/ 1 cada una</p>
+
+          <div class="period-results">
+            <div class="period-card">
+              <span class="period-name">Por hora</span>
+              <strong id="hour-result">0.04</strong>
+              <small>cachangas</small>
+            </div>
+            <div class="period-card">
+              <span class="period-name">Por día</span>
+              <strong id="day-result">1</strong>
+              <small>cachanga</small>
+            </div>
+            <div class="period-card">
+              <span class="period-name">Por semana</span>
+              <strong id="week-result">7</strong>
+              <small>cachangas</small>
+            </div>
+            <div class="period-card">
+              <span class="period-name">Por mes</span>
+              <strong id="month-result">30</strong>
+              <small>cachangas</small>
+            </div>
+          </div>
+          <p class="calculation-note">Calculado repartiendo el monto en un mes de 30 días.</p>
+        </div>
+      </div>
+    </section>
+
+    <p class="footer-joke">Porque decir “me gasté S/ 30” no tiene el mismo impacto. 🌟</p>
+  </main>
+</MainLayout>
+
+<script>
+  const amountInput = document.querySelector("#amount");
+  const optionButtons = document.querySelectorAll(".price-option");
+  const totalResult = document.querySelector("#total-result");
+  const unitResult = document.querySelector("#unit-result");
+  const priceCaption = document.querySelector("#price-caption");
+  const periodResults = {
+    hour: document.querySelector("#hour-result"),
+    day: document.querySelector("#day-result"),
+    week: document.querySelector("#week-result"),
+    month: document.querySelector("#month-result"),
+  };
+  let selectedPrice = 1;
+
+  const formatNumber = (value) =>
+    new Intl.NumberFormat("es-PE", {
+      maximumFractionDigits: 2,
+      minimumFractionDigits: 0,
+    }).format(value);
+
+  const updateResults = () => {
+    const amount = Math.max(Number.parseFloat(amountInput.value) || 0, 0);
+    const total = amount / selectedPrice;
+
+    totalResult.textContent = formatNumber(total);
+    unitResult.textContent = total === 1 ? "cachanga" : "cachangas";
+    priceCaption.textContent = `a S/ ${formatNumber(selectedPrice)} cada una`;
+    periodResults.hour.textContent = formatNumber(total / 720);
+    periodResults.day.textContent = formatNumber(total / 30);
+    periodResults.week.textContent = formatNumber(total / (30 / 7));
+    periodResults.month.textContent = formatNumber(total);
+  };
+
+  optionButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      selectedPrice = Number(button.dataset.price);
+      optionButtons.forEach((option) => {
+        const isSelected = option === button;
+        option.classList.toggle("is-selected", isSelected);
+        option.setAttribute("aria-pressed", String(isSelected));
+      });
+      updateResults();
+    });
+  });
+
+  amountInput.addEventListener("input", updateResults);
+  updateResults();
+</script>
+
+<style>
+  .cachangas-page {
+    --ink: #223257;
+    --cream: #fff9ef;
+    --coral: #f9bcb2;
+    --yellow: #f8d77d;
+    color: var(--ink);
+    min-height: 100vh;
+    background: var(--cream);
+    padding-bottom: 5rem;
+  }
+
+  .cachangas-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.8fr);
+    gap: clamp(2rem, 7vw, 8rem);
+    align-items: center;
+    min-height: 650px;
+    padding: 9rem max(2rem, 8vw) 6rem;
+    color: #fff9ef;
+    background: var(--ink);
+    overflow: hidden;
+  }
+
+  .hero-copy { max-width: 680px; }
+  .eyebrow, .section-kicker {
+    margin: 0 0 1.25rem;
+    color: var(--coral);
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  h1, h2, .main-result strong { font-family: "Koulen", monospace; font-weight: 400; }
+  h1 {
+    margin: 0;
+    font-size: clamp(4rem, 10vw, 8.5rem);
+    line-height: 0.84;
+    letter-spacing: -0.04em;
+  }
+  h1 span { color: var(--yellow); }
+  .intro { max-width: 490px; margin: 2.2rem 0 0; color: #dde5f0; font-size: 1.1rem; line-height: 1.5; }
+  .hero-image-wrap { position: relative; transform: rotate(3deg); }
+  .hero-image { display: block; width: 100%; aspect-ratio: 1 / 1; object-fit: cover; border: 0.7rem solid #fff9ef; box-shadow: 1.2rem 1.2rem 0 var(--coral); }
+  .image-sticker { position: absolute; right: -1.2rem; bottom: -1.5rem; padding: 0.7rem 1rem; color: var(--ink); background: var(--yellow); font-weight: 800; transform: rotate(-8deg); }
+
+  .calculator { max-width: 1180px; margin: 0 auto; padding: 7rem 2rem 2rem; }
+  .calculator-heading { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-bottom: 2rem; }
+  h2 { margin: 0; font-size: clamp(2.8rem, 6vw, 5rem); line-height: 0.9; }
+  .reference-note, .calculation-note, .input-hint { color: #68738a; font-size: 0.9rem; }
+  .reference-note { margin: 0 0 0.3rem; }
+  .calculator-grid { display: grid; grid-template-columns: minmax(260px, 0.8fr) minmax(0, 1.2fr); gap: 1.5rem; }
+  .controls-panel, .result-panel { padding: clamp(1.5rem, 3vw, 2.5rem); }
+  .controls-panel { background: #fff; border: 1px solid #e2e5eb; }
+  .price-options { display: grid; gap: 0.7rem; margin: 0; padding: 0; border: 0; }
+  .price-option { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.8rem; width: 100%; padding: 1rem; border: 2px solid transparent; color: var(--ink); background: #f5f6f8; text-align: left; cursor: pointer; transition: border-color 160ms ease, background 160ms ease, transform 160ms ease; }
+  .price-option:hover { transform: translateX(3px); border-color: var(--coral); }
+  .price-option.is-selected { border-color: var(--ink); background: var(--coral); }
+  .option-icon { font-weight: 800; font-size: 1.15rem; }
+  .option-copy { display: grid; gap: 0.15rem; }
+  .option-copy strong { font-size: 0.96rem; }
+  .option-copy small { color: #68738a; font-size: 0.78rem; }
+  .option-price { font-weight: 800; white-space: nowrap; }
+  .amount-label { display: block; margin: 2rem 0 0.65rem; font-weight: 800; }
+  .amount-input-wrap { display: flex; align-items: center; gap: 0.65rem; padding: 0.7rem 1rem; border: 2px solid var(--ink); background: var(--cream); font-size: 1.4rem; font-weight: 800; }
+  .amount-input-wrap input { min-width: 0; width: 100%; border: 0; outline: 0; color: var(--ink); background: transparent; font: inherit; }
+  .input-hint { margin: 0.65rem 0 0; }
+  .result-panel { color: #fff9ef; background: var(--ink); }
+  .result-label { margin: 0; color: var(--coral); font-weight: 800; }
+  .main-result { display: flex; align-items: baseline; gap: 1rem; margin: 0.5rem 0 0; }
+  .main-result strong { color: var(--yellow); font-size: clamp(4.5rem, 10vw, 8rem); line-height: 0.95; }
+  .main-result span { font-size: clamp(1.1rem, 2vw, 1.5rem); font-weight: 800; }
+  .result-caption { margin: 0.3rem 0 2.5rem; color: #dde5f0; }
+  .period-results { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.7rem; }
+  .period-card { min-width: 0; padding: 1rem; background: #304263; }
+  .period-name, .period-card small { display: block; color: #b9c6dd; font-size: 0.75rem; }
+  .period-card strong { display: block; margin: 0.5rem 0 0.1rem; color: #fff9ef; font-size: clamp(1.3rem, 3vw, 2rem); overflow-wrap: anywhere; }
+  .calculation-note { margin: 1.5rem 0 0; color: #b9c6dd; }
+  .footer-joke { margin: 4rem auto 0; padding: 0 2rem; color: var(--ink); text-align: center; font-size: 1.05rem; font-weight: 700; }
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+  @media (max-width: 760px) {
+    .cachangas-hero { grid-template-columns: 1fr; min-height: 0; padding-top: 8rem; }
+    .hero-image-wrap { max-width: 420px; width: 85%; margin: 1rem auto 0; }
+    .calculator { padding-top: 5rem; }
+    .calculator-heading { display: block; }
+    .reference-note { margin-top: 1rem; }
+    .calculator-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .cachangas-hero { padding-right: 1.4rem; padding-left: 1.4rem; }
+    .calculator { padding-right: 1rem; padding-left: 1rem; }
+    .period-results { grid-template-columns: repeat(2, 1fr); }
+    .main-result { gap: 0.5rem; }
+  }
+</style>
